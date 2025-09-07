@@ -1,1 +1,1 @@
-# Gal's personal website.
+# Daum's personal website.
