@@ -7,7 +7,7 @@ redirect_from:
   - /about.html
 ---
 
-Hi! This is Gal. I'm currently based in Thimphu, Bhutan working as a Project Manager for [Gelephu Mindfulness City](https://gmc.bt/). I am also a Visiting Researcher at the [Henkaku Center at Chiba Institute of Technology](https://www.henkaku.center/en).
+Hi! This is Daum. I'm currently based in Thimphu, Bhutan working as a Project Manager for [Gelephu Mindfulness City](https://gmc.bt/). I am also a Visiting Researcher at the [Henkaku Center at Chiba Institute of Technology](https://www.henkaku.center/en).
 
 Before this, I was a PhD student working with [Prof. Rebecca Saxe](https://saxelab.mit.edu/) in the [Department of Brain and Cognitive Sciences at MIT](https://bcs.mit.edu/). I worked on better understanding the computational mechanisms underlying visual attention, particularly in preverbal infants. To do [this research](https://www.biorxiv.org/content/10.1101/2024.08.21.609039v2.abstract), I used tools from developmental psychology, computational cognitive science and optimal decision theory. I also worked on [automated tools for infant behavioral testing](https://psycnet.apa.org/fulltext/2024-97072-001.html) to accelerate the study of the developing mind and make it more robust.
 
