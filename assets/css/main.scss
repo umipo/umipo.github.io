@@ -40,3 +40,14 @@
 @import "vendor/font-awesome/brands";
 @import "vendor/magnific-popup/magnific-popup";
 @import "print";
+
+/* Custom styles for header text color */
+.masthead {
+  .site-title {
+    color: #c0c0c0 !important;
+  }
+  
+  .masthead__menu-item a {
+    color: #c0c0c0 !important;
+  }
+}

@@ -13,7 +13,7 @@ seo:
 
 Hello! I'm Daum Kim (한글: 김다움; 中文: 金茶莲; 日本語: キム ダウミ), and I'm a Korea-born, China-raised, and Japan-based East Asian.
 
-Currently, I serve as the Project Director at the [Henkaku Center](https://henkaku.org), where I oversee antidisciplinary research projects and communications. I also work as Deputy Architect at the [Digital Architecture Lab](https://dalab.xyz), and as Director of Creative Content at the [Gelephu Mindfulness City](https://gmc.bt), Bhutan's new special administrative region, where I lead digital media strategy and branding. Across these roles, I work closely with Joi Ito to bridge academia, industry, and public service in designing systems that foster intercultural interactions and community building.
+Currently, I serve as the Project Director at the [Henkaku Center](https://henkaku.org), where I oversee antidisciplinary research projects and communications. I also work as Deputy Architect at the [Digital Architecture Lab](https://dalab.xyz), and as Director of Creative Content at the [Gelephu Mindfulness City](https://gmc.bt), Bhutan's new special administrative region, where I lead digital media strategy and branding. Across these roles, I work closely with [Joi Ito](https://joi.ito.com/) to bridge academia, industry, and public service in designing systems that foster intercultural interactions and community building.
 
 Before my projects with Joi, I spent five years managing global social media strategy at the [International Olympic Committee](https://www.olympics.com/) and the Tokyo 2020 Olympic and Paralympic Games Committee.
 
