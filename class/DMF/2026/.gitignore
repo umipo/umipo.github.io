@@ -1,0 +1,5 @@
+passcode.txt
+local.json
+_to_delete/
+__pycache__/
+.DS_Store

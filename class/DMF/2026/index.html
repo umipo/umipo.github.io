@@ -1,0 +1,1060 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Digital Media & Flourishing</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="assets/daum-mark.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;700;800&display=swap">
+<style>
+/* DAUM system (v2, Oct 2026): paper and ink, Figtree in three weights, colour as a stroke.
+   Single theme — paper is the only ground. The students' own brand colours appear only
+   inside their tiles and pages. Numerals in vermilion, links with a painted cobalt
+   underline, one butter highlighter on the title, hairlines never shadows, square corners. */
+:root{
+  color-scheme:light;
+  --paper:#f3f1ec; --ink:#1e1d1b; --ink-soft:#4a4843; --ink-mute:#6b675e; --rule:#d8d4cc;
+  --vermilion:#e8503a; --cobalt:#2f4be0; --butter:#f2ce3a;
+  --accent:var(--ink);
+  --sans:"Figtree",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;
+  --gutter-l:max(24px,env(safe-area-inset-left,0px)); --gutter-r:max(24px,env(safe-area-inset-right,0px));
+  --s1:4px; --s2:8px; --s3:16px; --s4:24px; --s5:40px; --s6:56px; --s7:96px;
+}
+@media (min-width:760px){:root{--gutter-l:max(56px,env(safe-area-inset-left,0px)); --gutter-r:max(56px,env(safe-area-inset-right,0px))}}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto} *{transition:none!important;animation:none!important}}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased;min-height:100%}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--paper)}
+img{max-width:100%;display:block;height:auto}
+a{color:inherit}
+button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer}
+:focus-visible{outline:2px solid var(--cobalt);outline-offset:3px}
+[hidden]{display:none!important}
+h1,h2,h3{font-weight:800;letter-spacing:-.03em;text-wrap:balance;margin:0;line-height:1.05}
+
+.wrap{padding-left:var(--gutter-l);padding-right:var(--gutter-r);max-width:1320px;margin-inline:auto}
+.label{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-mute);line-height:1.3}
+.small{font-size:14px;font-weight:500;line-height:1.45;color:var(--ink-soft)}
+.num{color:var(--vermilion);font-variant-numeric:tabular-nums}
+mark{background:linear-gradient(transparent 58%,var(--butter) 58%,var(--butter) 94%,transparent 94%);color:inherit}
+
+/* painted links: bold ink, cobalt on hover, a drawn underline */
+.plink{display:inline-flex;flex-direction:column;gap:var(--s1);font-weight:700;font-size:17px;line-height:1.2;text-decoration:none;color:var(--ink)}
+.plink:hover,.plink:focus-visible{color:var(--cobalt)}
+.plink svg{display:block;height:8px;width:auto}
+.plink.sm{font-size:15px}
+.plink.sm svg{height:7px}
+.quiet{text-decoration:none;color:var(--ink-soft);font-weight:700}
+.quiet:hover{color:var(--cobalt)}
+
+/* ---------- header ---------- */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--paper);border-bottom:1px solid var(--rule)}
+.bar .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:64px}
+.bar .home{font-weight:700;font-size:16px;letter-spacing:-.01em;text-decoration:none;white-space:nowrap}
+.bar nav{display:flex;gap:28px;font-size:15px;font-weight:700}
+.bar nav a{text-decoration:none;position:relative;padding-bottom:6px}
+.bar nav a:hover{color:var(--cobalt)}
+.bar nav a svg{position:absolute;left:0;right:0;bottom:-2px;height:6px;width:100%;display:none}
+.bar nav a[aria-current="page"] svg{display:block}
+@media (max-width:520px){.bar .home{font-size:14px} .bar nav{gap:16px;font-size:14px}}
+
+/* ---------- home / syllabus ---------- */
+.hero{padding-block:clamp(48px,8vw,112px) clamp(32px,5vw,64px);display:grid;gap:var(--s4);border-bottom:1px solid var(--rule)}
+.hero h1{font-size:clamp(44px,8vw,96px);line-height:.95;letter-spacing:-.045em;max-width:11ch}
+.hero .ja{font-size:clamp(16px,2vw,22px);font-weight:500;color:var(--ink-soft);letter-spacing:.06em}
+.hero .offered{display:flex;flex-wrap:wrap;align-items:center;gap:var(--s3) var(--s5);margin-top:var(--s3)}
+.hero .offered img{height:40px;width:auto}
+.hero .offered img.dabtong{height:34px}
+@media (max-width:520px){.hero .offered img{height:32px} .hero .offered img.dabtong{height:28px}}
+.block{padding-block:clamp(48px,7vw,96px);border-bottom:1px solid var(--rule);display:grid;grid-template-columns:minmax(0,200px) minmax(0,1fr);gap:var(--s4) var(--s5)}
+.block > .label{padding-top:8px}
+.block h2{font-size:32px;margin-bottom:var(--s4)}
+@media (max-width:760px){.block{grid-template-columns:1fr;padding-block:var(--s6)}}
+.lede{font-size:clamp(20px,2.3vw,26px);font-weight:500;line-height:1.4;max-width:32ch;margin:0}
+.outcomes{list-style:none;margin:0;padding:0;display:grid;gap:var(--s3);max-width:68ch}
+.outcomes li{padding-left:36px;position:relative}
+.outcomes li svg{position:absolute;left:0;top:.55em;width:22px;height:8px}
+
+.sched{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
+.sched th{text-align:left;padding:0 12px 12px 0;border-bottom:1px solid var(--ink)}
+.sched td{padding:16px 12px 16px 0;border-bottom:1px solid var(--rule);vertical-align:top}
+.sched td.wk{width:4ch;font-weight:800;font-size:20px;line-height:1.2;letter-spacing:-.02em}
+.sched td.date{white-space:nowrap;width:12ch;font-weight:500}
+.sched td.time{white-space:nowrap;width:12ch;color:var(--ink-soft)}
+.sched td.topic{font-weight:700}
+.sched .note{display:block;font-weight:500;color:var(--ink-soft);font-size:14px;margin-top:2px}
+.sched .work{margin-top:8px}
+.sched tr.next td{background:#ebe8e1}
+.sched tr.past td{color:var(--ink-mute)}
+.sched tr.past td.wk{color:var(--ink-mute)}
+.sched tr.past td.topic{font-weight:500}
+.chip{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--cobalt);margin-left:10px;vertical-align:middle}
+@media (max-width:600px){.sched td.time,.sched th.time{display:none}}
+.sched-notes{color:var(--ink-soft);font-size:14px;font-weight:500;max-width:68ch;margin-top:var(--s4);display:grid;gap:8px}
+
+/* ---------- brand grid ---------- */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,380px),1fr));gap:var(--s5) var(--s4);padding-block:var(--s5) var(--s7)}
+.grid.strip{grid-template-columns:repeat(auto-fill,minmax(min(100%,250px),1fr));padding-block:0;gap:var(--s4) 20px}
+.tile{display:grid;gap:12px;text-decoration:none;min-width:0}
+.tile .cover{background:var(--tile,var(--accent));overflow:hidden;position:relative;aspect-ratio:4/3;display:grid;place-items:center}
+.tile .cover img.logo{width:44%;height:auto;max-height:60%;object-fit:contain;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.tile .cover img.full{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.tile:hover .cover img.logo{transform:scale(1.06)}
+.tile:hover .cover img.full{transform:scale(1.03)}
+.tile .cap{font-size:14px;font-weight:500;color:var(--ink-soft);min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.tile:hover .cap{color:var(--cobalt)}
+.section-head{padding-block:clamp(48px,8vw,96px) 0;display:grid;gap:var(--s4)}
+.section-head h1{font-size:clamp(40px,6.5vw,72px);line-height:.98;letter-spacing:-.04em}
+.section-head p{margin:0;max-width:60ch;font-size:20px;font-weight:500;line-height:1.4;color:var(--ink-soft)}
+.work-section{padding-top:clamp(40px,6vw,72px);display:grid;gap:var(--s3)}
+.work-section h2{font-size:32px}
+.more{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:var(--s4)}
+.empty{padding-block:64px;color:var(--ink-soft);max-width:52ch}
+
+/* ---------- brand page ---------- */
+.head{padding-block:clamp(32px,5vw,64px) 0;display:grid;gap:var(--s5)}
+.head .cover{border:1px solid var(--rule)}
+.head .cover img{width:100%}
+.title{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--s4) var(--s5);align-items:start;padding-bottom:clamp(32px,5vw,64px);border-bottom:1px solid var(--rule)}
+.title h1{font-size:clamp(36px,5.5vw,64px);line-height:1;letter-spacing:-.04em}
+.title .by{display:grid;gap:2px;margin-top:var(--s3)}
+.title .by .name{font-size:17px;font-weight:700}
+.title .by .role{color:var(--ink-soft);font-size:15px;font-weight:500}
+.title .side{display:grid;gap:var(--s3);align-content:start}
+.title .tag{font-size:clamp(20px,2.3vw,26px);font-weight:500;line-height:1.35;margin:0}
+.words{font-size:15px;font-weight:700;color:var(--accent);display:flex;flex-wrap:wrap;gap:0}
+.words span+span::before{content:"·";margin-inline:8px;color:var(--ink-mute)}
+@media (max-width:760px){.title{grid-template-columns:1fr}}
+
+section.part{padding-block:clamp(40px,6vw,80px);border-bottom:1px solid var(--rule)}
+.part-head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:var(--s4)}
+.part-head h2{font-size:32px}
+.part-head .note{max-width:48ch}
+
+/* moodboard: references with the student's own notes, masonry columns */
+.mood{columns:4 220px;column-gap:var(--s4)}
+.mood figure{margin:0 0 var(--s4);break-inside:avoid;display:grid;gap:8px}
+.mood a{display:block;border:1px solid var(--rule);background:#fff}
+.mood a:hover{border-color:var(--ink)}
+.mood img{width:100%}
+.mood figcaption{font-size:14px;font-weight:500;line-height:1.45;color:var(--ink-soft)}
+.kit-pages{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,420px),1fr));gap:var(--s4)}
+.kit-pages img{width:100%;border:1px solid var(--rule)}
+
+.pages{display:grid;gap:var(--s4);max-width:1040px}
+.page{display:grid;gap:8px}
+.page button{display:block;width:100%;border:1px solid var(--rule);background:#fff;transition:border-color .2s}
+.page button:hover{border-color:var(--ink)}
+.page img{width:100%}
+.page .folio{display:flex;justify-content:space-between}
+
+.desk{border:1px solid var(--rule);padding:clamp(24px,5vw,56px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:clamp(24px,4vw,48px);align-items:start}
+.card{display:grid;gap:10px;justify-items:start}
+.card img{width:100%;border:1px solid var(--rule)}
+
+.rail{display:flex;gap:var(--s3);overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:14px;scrollbar-width:thin;scrollbar-color:var(--rule) transparent;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain}
+.rail .slide{flex:0 0 auto;scroll-snap-align:start;height:min(68vh,600px);border:1px solid var(--rule)}
+.rail .slide img{height:100%;width:auto;max-width:none}
+@media (max-width:600px){.rail .slide{height:auto;width:86%} .rail .slide img{width:100%;height:auto}}
+.rail-ctl{display:flex;align-items:baseline;gap:var(--s4);margin-top:var(--s3)}
+.rail-ctl .cnt{font-size:14px;font-weight:500;color:var(--ink-soft);font-variant-numeric:tabular-nums}
+.rail-ctl button{font-weight:700;font-size:15px}
+.rail-ctl button:hover{color:var(--cobalt)}
+
+.credits{padding-block:clamp(40px,6vw,80px);display:grid;grid-template-columns:minmax(0,1fr) auto;gap:var(--s4);align-items:start}
+.credits .who{font-size:32px;font-weight:800;letter-spacing:-.03em;line-height:1.05}
+.credits .lines{display:grid;gap:2px;margin-top:var(--s3)}
+.credits .links{display:flex;flex-wrap:wrap;gap:8px 24px;margin-top:var(--s4)}
+.credits .mark{width:min(120px,28vw);aspect-ratio:1;background:var(--tile,var(--accent));display:grid;place-items:center}
+.credits .mark img{width:60%}
+@media (max-width:600px){.credits{grid-template-columns:1fr}}
+.pn{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--rule);margin-bottom:var(--s7)}
+.pn a{display:grid;gap:6px;padding-block:var(--s4);text-decoration:none;min-width:0}
+.pn a+a{text-align:right;border-left:1px solid var(--rule);padding-left:16px}
+.pn a:first-child{padding-right:16px}
+.pn a:only-child{grid-column:1/-1;text-align:left;border-left:0;padding-left:0}
+.pn .t{font-weight:800;font-size:24px;letter-spacing:-.03em;line-height:1.15;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.pn a:hover .t{color:var(--cobalt)}
+
+.lb{position:fixed;inset:0;z-index:20;background:rgba(243,241,236,.96);display:grid;grid-template-rows:auto 1fr;
+  padding-left:var(--gutter-l);padding-right:var(--gutter-r);padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+.lb .top{display:flex;justify-content:space-between;align-items:center;min-height:64px}
+.lb .stage{display:grid;place-items:center;overflow:auto;padding-bottom:24px}
+.lb .stage img{max-height:calc(100vh - 120px);width:auto;max-width:100%;border:1px solid var(--rule)}
+.lb .nav{display:flex;gap:var(--s4);align-items:baseline}
+.lb .nav button{font-weight:700;font-size:15px}
+.lb .nav button:hover{color:var(--cobalt)}
+
+/* passcode gate for student work */
+.gate{padding-block:clamp(64px,12vw,160px) var(--s7);display:grid;gap:var(--s4);max-width:52ch}
+.gate h1{font-size:clamp(32px,5vw,56px);line-height:1;letter-spacing:-.04em}
+.gate p{margin:0;font-size:17px;color:var(--ink-soft)}
+.gate form{display:flex;flex-wrap:wrap;align-items:flex-end;gap:var(--s4);margin-top:var(--s2)}
+.gate .field{display:grid;gap:6px;min-width:0}
+.gate input{font:inherit;font-size:20px;font-weight:500;color:var(--ink);background:transparent;border:0;border-bottom:1px solid var(--ink);padding:8px 0;min-width:16ch;border-radius:0;letter-spacing:.1em}
+.gate input:focus{outline:0;border-bottom-color:var(--cobalt)}
+.gate button{padding-bottom:12px}
+.gate .err{color:var(--vermilion);font-weight:500;min-height:1.5em}
+
+footer.site{padding-block:var(--s5) var(--s6);border-top:1px solid var(--rule);display:flex;flex-wrap:wrap;gap:var(--s3) var(--s4);justify-content:space-between;align-items:center;color:var(--ink-soft);font-size:14px;font-weight:500}
+footer.site img{height:28px;width:auto}
+</style>
+</head>
+<body>
+
+<div id="app"></div>
+
+<script>
+/* ===== Generated by build.py from course.json and the student folders ===== */
+window.COURSE = {
+  "title": "Digital Media & Flourishing",
+  "titleJa": "デジタルメディアと成長特論",
+  "term": "Fall 2026",
+  "school": "School of Design and Science, Chiba Tech",
+  "instructor": "Daum Kim",
+  "format": "Online · Wednesdays 13:00–15:00 Tokyo",
+  "description": "How is digital media shaping our world, our perceptions, and the way we communicate and think? In this course, we explore the mechanisms driving new cultural and societal trends in digital media. We examine the relationship between technology, its functions, and human experience, along with the nature of the digital world and how it influences our lives.",
+  "outcomesIntro": "I wish the class will guide you to:",
+  "outcomes": [
+    "Develop an understanding of theories of narrative, intergroup contact, digital architecture, and media design.",
+    "Explore how concepts such as attention, trust, value, and belonging emerge and operate within digital environments.",
+    "Gain hands-on experience creating digital content across formats — writing, visual identity, short-form and long-form video, and AI-assisted design.",
+    "Design and critique platform functions, reflecting on how the architecture of digital platforms influences interaction, behaviour, trust, and flourishing.",
+    "Consider how digital media shapes encounters across difference, including its potential to both divide and connect people."
+  ],
+  "schedule": [
+    {
+      "week": 1,
+      "date": "2026-09-30",
+      "time": "13:00–15:00",
+      "topic": "Introduction to Digital Media"
+    },
+    {
+      "week": 2,
+      "date": "2026-10-07",
+      "time": "13:00–15:00",
+      "topic": "Narrative + Write"
+    },
+    {
+      "week": 3,
+      "date": "2026-10-14",
+      "time": "13:00–15:00",
+      "topic": "Visuals — Brand Identity",
+      "work": "brands"
+    },
+    {
+      "week": 4,
+      "date": "2026-10-21",
+      "time": "13:00–15:00",
+      "topic": "Brand Narrative & Engagement"
+    },
+    {
+      "week": 5,
+      "date": "2026-10-28",
+      "time": "13:00–15:00",
+      "topic": "Attention",
+      "note": "Guest speaker: Dr. Gal Raz",
+      "noteLink": "https://galraz.github.io/"
+    },
+    {
+      "week": 6,
+      "date": "2026-11-04",
+      "time": "13:00–15:00",
+      "topic": "Introduction to Video"
+    },
+    {
+      "week": 7,
+      "date": "2026-11-11",
+      "time": "13:00–15:00",
+      "topic": "Documentary",
+      "note": "Guest speaker: Hiro Kay, NHK World producer"
+    },
+    {
+      "week": 8,
+      "date": "2026-11-18",
+      "time": "13:00–16:00",
+      "topic": "Shorts",
+      "note": "Three-hour session"
+    },
+    {
+      "week": 9,
+      "date": "2026-11-25",
+      "time": "13:00–15:00",
+      "topic": "Long-Form Video Creation (1)"
+    },
+    {
+      "week": 10,
+      "date": "2026-12-02",
+      "time": "13:00–15:00",
+      "topic": "Long-Form Video Creation (2)"
+    },
+    {
+      "week": 11,
+      "date": "2026-12-09",
+      "time": "13:00–16:00",
+      "topic": "Flourishing",
+      "note": "Three-hour session"
+    },
+    {
+      "week": 12,
+      "date": "2026-12-16",
+      "time": "13:00–15:00",
+      "topic": "Final Project Presentations"
+    }
+  ],
+  "scheduleNotes": [
+    "Every session meets online on Wednesdays. The November 18 and December 9 classes are three hours long to make up for the class that falls on Silver Week.",
+    "This syllabus may change during the semester; any changes will be announced. Revised 19 October 2026."
+  ],
+  "brandsIntro": "In Week 3 each student designed a personal brand from the ground up: a brand guide, a business card, and a story told as a social carousel.",
+  "workIntro": "Work made in the course by the students, shared with the class of 2026",
+  "passHash": "fc305bc019b687ec3c1f806f3a88222436094a9d8ff2ed202fd7aa437d6022f1"
+};
+window.BRANDS = [
+  {
+    "slug": "kinley-dorji",
+    "name": "Kinley Dorji",
+    "brand": "Jetsuen's Family",
+    "tagline": "A home with a tree beside it.",
+    "credit": "Designed by Kinley Dorji",
+    "links": {},
+    "order": 999,
+    "role": "Student, School of Design and Science, Chiba Tech",
+    "words": [
+      "Loving",
+      "Caring",
+      "Trusting",
+      "Happy",
+      "Rooted"
+    ],
+    "carouselTitle": "Where I live",
+    "accent": "#3f6b3a",
+    "logo": "assets/kinley-dorji/logo.png",
+    "tileBg": "#3f6b3a",
+    "moodboard": [],
+    "kitPages": [
+      "assets/kinley-dorji/kit-01.jpg",
+      "assets/kinley-dorji/kit-02.jpg",
+      "assets/kinley-dorji/kit-03.jpg",
+      "assets/kinley-dorji/kit-04.jpg",
+      "assets/kinley-dorji/kit-05.jpg",
+      "assets/kinley-dorji/kit-06.jpg"
+    ],
+    "cover": "assets/kinley-dorji/guide-01.jpg",
+    "guide": [
+      "assets/kinley-dorji/guide-01.jpg",
+      "assets/kinley-dorji/guide-02.jpg",
+      "assets/kinley-dorji/guide-03.jpg",
+      "assets/kinley-dorji/guide-04.jpg",
+      "assets/kinley-dorji/guide-05.jpg",
+      "assets/kinley-dorji/guide-06.jpg",
+      "assets/kinley-dorji/guide-07.jpg",
+      "assets/kinley-dorji/guide-08.jpg",
+      "assets/kinley-dorji/guide-09.jpg",
+      "assets/kinley-dorji/guide-10.jpg",
+      "assets/kinley-dorji/guide-11.jpg"
+    ],
+    "cards": [
+      "assets/kinley-dorji/cards-01.jpg",
+      "assets/kinley-dorji/cards-02.jpg"
+    ],
+    "carousel": [
+      "assets/kinley-dorji/carousel-01.jpg",
+      "assets/kinley-dorji/carousel-02.jpg",
+      "assets/kinley-dorji/carousel-03.jpg",
+      "assets/kinley-dorji/carousel-04.jpg",
+      "assets/kinley-dorji/carousel-05.jpg",
+      "assets/kinley-dorji/carousel-06.jpg",
+      "assets/kinley-dorji/carousel-07.jpg",
+      "assets/kinley-dorji/carousel-08.jpg"
+    ]
+  },
+  {
+    "slug": "kuenzang-namgyel",
+    "name": "Kuenzang Namgyel",
+    "brand": "kuenzang namgyel",
+    "tagline": "The work is still being written.",
+    "credit": "Designed by Kuenzang Namgyel",
+    "links": {
+      "Website": "https://auecool.vercel.app"
+    },
+    "order": 999,
+    "role": "Full stack engineer",
+    "words": [
+      "Clean",
+      "Curious",
+      "Detail-oriented",
+      "Intentional"
+    ],
+    "carouselTitle": "The Childhood I Get to Live Twice",
+    "accent": "#2436c9",
+    "logo": "assets/kuenzang-namgyel/logo.png",
+    "tileBg": "#2436c9",
+    "moodboard": [
+      {
+        "src": "assets/kuenzang-namgyel/mood-01.jpg",
+        "caption": "The cloud, grainy texture and color of the cloud.",
+        "link": "https://pin.it/6mwjG2uOb"
+      },
+      {
+        "src": "assets/kuenzang-namgyel/mood-02.jpg",
+        "caption": "The background colors and the color of  the eye and the eyebrow.",
+        "link": "https://pin.it/7Ktse4KVv"
+      },
+      {
+        "src": "assets/kuenzang-namgyel/mood-03.jpg",
+        "caption": "The art direction.",
+        "link": "https://pin.it/6xhFnnI40"
+      },
+      {
+        "src": "assets/kuenzang-namgyel/mood-04.jpg",
+        "caption": "The art direction.",
+        "link": "https://pin.it/10eGcmTra"
+      },
+      {
+        "src": "assets/kuenzang-namgyel/mood-05.jpg",
+        "caption": "The color effect.",
+        "link": "https://pin.it/4h7Os3cIR"
+      },
+      {
+        "src": "assets/kuenzang-namgyel/mood-06.jpg",
+        "caption": "The sketch.",
+        "link": "https://pin.it/4DvJXjbgA"
+      },
+      {
+        "src": "assets/kuenzang-namgyel/mood-07.jpg",
+        "caption": "I loved the cute sketch and play of words.",
+        "link": "https://pin.it/4ZuWOcAtr"
+      },
+      {
+        "src": "assets/kuenzang-namgyel/mood-08.jpg",
+        "caption": "The New Yorker Font.",
+        "link": "https://pin.it/1csMI99EH"
+      },
+      {
+        "src": "assets/kuenzang-namgyel/mood-09.jpg",
+        "caption": "The mix-media approach.",
+        "link": "https://pin.it/2Yf0nwXjz"
+      },
+      {
+        "src": "assets/kuenzang-namgyel/mood-10.jpg",
+        "caption": "Layout, typography and photography style.",
+        "link": "https://pin.it/74uafNOFn"
+      },
+      {
+        "src": "assets/kuenzang-namgyel/mood-11.jpg",
+        "caption": "I find it attractive, but don’t know why.",
+        "link": "https://pin.it/4AzUScNFz"
+      },
+      {
+        "src": "assets/kuenzang-namgyel/mood-12.jpg",
+        "caption": "The topography texture.",
+        "link": "https://pin.it/Rx9ZkHs2W"
+      },
+      {
+        "src": "assets/kuenzang-namgyel/mood-13.jpg",
+        "caption": "The spiritual vibe.",
+        "link": "https://pin.it/58mK4xu8N"
+      },
+      {
+        "src": "assets/kuenzang-namgyel/mood-14.jpg",
+        "caption": "The Photography Style.",
+        "link": "https://pin.it/7ndf4dsLa"
+      },
+      {
+        "src": "assets/kuenzang-namgyel/mood-15.jpg",
+        "caption": "Sarcasm.",
+        "link": "https://pin.it/ep4YJj68G"
+      },
+      {
+        "src": "assets/kuenzang-namgyel/mood-16.jpg",
+        "caption": "The Layout and typography.",
+        "link": "https://pin.it/50DlL4AgL"
+      },
+      {
+        "src": "assets/kuenzang-namgyel/mood-17.jpg",
+        "caption": "The Illustration.",
+        "link": "https://pin.it/74il1v5PQ"
+      },
+      {
+        "src": "assets/kuenzang-namgyel/mood-18.jpg",
+        "caption": "All the colors, really like the ancient vibe the colors give.",
+        "link": "https://pin.it/31Jc0aE0l"
+      },
+      {
+        "src": "assets/kuenzang-namgyel/mood-19.jpg",
+        "caption": "I really like the plain background with beautiful layout.",
+        "link": "https://pin.it/5Ck9ZaRvx"
+      },
+      {
+        "src": "assets/kuenzang-namgyel/mood-20.jpg",
+        "caption": "I really like the illustrations and the branding of The New Yorker.",
+        "link": "https://pin.it/7stvKCYwB"
+      },
+      {
+        "src": "assets/kuenzang-namgyel/mood-21.jpg",
+        "caption": "Fun Way to show the message, we usually show a boring error page.",
+        "link": "https://pin.it/1empbqPj7"
+      },
+      {
+        "src": "assets/kuenzang-namgyel/mood-22.jpg",
+        "caption": "I loved the texture and it really blends with the background.",
+        "link": "https://pin.it/OCcFj2iOf"
+      },
+      {
+        "src": "assets/kuenzang-namgyel/mood-23.jpg",
+        "caption": "Loved the Sketch & the handwritten title, it gives a personal touch.",
+        "link": "https://pin.it/5IiH0IwLq"
+      },
+      {
+        "src": "assets/kuenzang-namgyel/mood-24.jpg",
+        "caption": "I really love the font of Bhutan Believe Brand. The dragon is very unique, normally people would use a traditional dragon with the traditional colors.",
+        "link": "https://pin.it/S3HaGqrQm"
+      }
+    ],
+    "kitPages": [],
+    "cover": "assets/kuenzang-namgyel/guide-01.jpg",
+    "guide": [
+      "assets/kuenzang-namgyel/guide-01.jpg",
+      "assets/kuenzang-namgyel/guide-02.jpg",
+      "assets/kuenzang-namgyel/guide-03.jpg",
+      "assets/kuenzang-namgyel/guide-04.jpg",
+      "assets/kuenzang-namgyel/guide-05.jpg",
+      "assets/kuenzang-namgyel/guide-06.jpg",
+      "assets/kuenzang-namgyel/guide-07.jpg",
+      "assets/kuenzang-namgyel/guide-08.jpg",
+      "assets/kuenzang-namgyel/guide-09.jpg",
+      "assets/kuenzang-namgyel/guide-10.jpg",
+      "assets/kuenzang-namgyel/guide-11.jpg"
+    ],
+    "cards": [
+      "assets/kuenzang-namgyel/cards-01.jpg",
+      "assets/kuenzang-namgyel/cards-02.jpg"
+    ],
+    "carousel": [
+      "assets/kuenzang-namgyel/carousel-01-01.jpg",
+      "assets/kuenzang-namgyel/carousel-01-02.jpg",
+      "assets/kuenzang-namgyel/carousel-01-03.jpg",
+      "assets/kuenzang-namgyel/carousel-01-04.jpg",
+      "assets/kuenzang-namgyel/carousel-01-05.jpg",
+      "assets/kuenzang-namgyel/carousel-01-06.jpg",
+      "assets/kuenzang-namgyel/carousel-01-07.jpg",
+      "assets/kuenzang-namgyel/carousel-01-08.jpg"
+    ]
+  },
+  {
+    "slug": "shohei-yoshida",
+    "name": "Shohei Yoshida",
+    "brand": "Shohei Yoshida",
+    "tagline": "Someone who works with what is not yet known.",
+    "credit": "Designed by Shohei Yoshida",
+    "links": {},
+    "order": 999,
+    "role": "Master's student / Research & software engineer",
+    "words": [
+      "Refined",
+      "Technical",
+      "Trustworthy",
+      "Warm",
+      "Genuine"
+    ],
+    "carouselTitle": "A sign that says Be quiet",
+    "accent": "#0000aa",
+    "logo": "assets/shohei-yoshida/logo.png",
+    "tileBg": "#0000aa",
+    "moodboard": [
+      {
+        "src": "assets/shohei-yoshida/mood-01.jpg",
+        "caption": "This cobalt blue, and the balance between the illustration and the text size.",
+        "link": "https://www.pinterest.com/pin/1134203487439511844/"
+      },
+      {
+        "src": "assets/shohei-yoshida/mood-02.jpg",
+        "caption": "The contrast between different typefaces, and the photo's muted tones that stay in the background but still leave an impression.",
+        "link": "https://www.pinterest.com/pin/1134203487439504007/"
+      },
+      {
+        "src": "assets/shohei-yoshida/mood-03.jpg",
+        "caption": "The dot graphic, and the generous whitespace in the layout.",
+        "link": "https://www.pinterest.com/pin/1134203487439512027/"
+      },
+      {
+        "src": "assets/shohei-yoshida/mood-04.jpg",
+        "caption": "A minimal expression built from abstract shapes and a limited colour palette.",
+        "link": "https://www.pinterest.com/pin/1134203487439512044/"
+      },
+      {
+        "src": "assets/shohei-yoshida/mood-05.jpg",
+        "caption": "The contrast between the realistic, striking collage and the digital UI-style elements, all in a single blue.",
+        "link": "https://www.pinterest.com/pin/1134203487439402414/"
+      },
+      {
+        "src": "assets/shohei-yoshida/mood-06.jpg",
+        "caption": "The large amount of space around the text.",
+        "link": "https://www.pinterest.com/pin/1134203487439402293/"
+      },
+      {
+        "src": "assets/shohei-yoshida/mood-07.jpg",
+        "caption": "How it brings several elements together in a cute, consistent style with a good balance.",
+        "link": "https://www.pinterest.com/pin/1134203487439409354/"
+      },
+      {
+        "src": "assets/shohei-yoshida/mood-08.jpg",
+        "caption": "How a single symbol carries the whole design, with very few elements.",
+        "link": "https://www.pinterest.com/pin/1134203487439410840/"
+      },
+      {
+        "src": "assets/shohei-yoshida/mood-09.jpg",
+        "caption": "Almost everything: the pixel-art bird that feels technical yet warm, the blue, black and off-white palette, and the bold type laid over the graphic.",
+        "link": "https://www.pinterest.com/pin/1134203487439409339/"
+      },
+      {
+        "src": "assets/shohei-yoshida/mood-10.jpg",
+        "caption": "The contrast of AI-style detection boxes laid over a nature photo, and the calm, muted colour tones.",
+        "link": "https://www.pinterest.com/pin/1134203487439402470/"
+      },
+      {
+        "src": "assets/shohei-yoshida/mood-11.jpg",
+        "caption": "Large photos paired with small, neatly aligned text, and a portfolio layout that lets the work speak while keeping descriptions minimal.",
+        "link": "https://www.pinterest.com/pin/1134203487439402733/"
+      },
+      {
+        "src": "assets/shohei-yoshida/mood-12.jpg",
+        "caption": "The colours: the vivid green with white type, and the deep charcoal.",
+        "link": "https://www.pinterest.com/pin/1134203487439402883/"
+      },
+      {
+        "src": "assets/shohei-yoshida/mood-13.jpg",
+        "caption": "A black-and-white base where only the photos carry colour.",
+        "link": "https://www.pinterest.com/pin/1134203487439402713/"
+      },
+      {
+        "src": "assets/shohei-yoshida/mood-14.jpg",
+        "caption": "The colours: turquoise and orange against warm skin tones, with yellow type.",
+        "link": "https://www.pinterest.com/pin/1134203487439402766/"
+      },
+      {
+        "src": "assets/shohei-yoshida/mood-15.jpg",
+        "caption": "The small touch of humour in a simple composition. The hanging socks could even work as navigation tabs.",
+        "link": "https://www.pinterest.com/pin/1134203487439403071/"
+      },
+      {
+        "src": "assets/shohei-yoshida/mood-16.jpg",
+        "caption": "As a colour palette: slate grey, powder blue, burnt rose and dusk blue.",
+        "link": "https://www.pinterest.com/pin/1134203487439402858/"
+      },
+      {
+        "src": "assets/shohei-yoshida/mood-17.jpg",
+        "caption": "A useful reference for planning a composition on a grid.",
+        "link": "https://www.pinterest.com/pin/1134203487439403084/"
+      },
+      {
+        "src": "assets/shohei-yoshida/mood-18.jpg",
+        "caption": "The colour consistency: each project's background matches the tones of its photos.",
+        "link": "https://www.pinterest.com/pin/1134203487439402705/"
+      },
+      {
+        "src": "assets/shohei-yoshida/mood-19.jpg",
+        "caption": "The humour, and the composition of the scene.",
+        "link": "https://www.pinterest.com/pin/1134203487439403055/"
+      },
+      {
+        "src": "assets/shohei-yoshida/mood-20.jpg",
+        "caption": "The colours, and the techy, blueprint-like feel of the design.",
+        "link": "https://www.pinterest.com/pin/1134203487439402788/"
+      },
+      {
+        "src": "assets/shohei-yoshida/mood-21.jpg",
+        "caption": "As a colour palette: muted sage, burnt orange, cream and dark brown.",
+        "link": "https://www.pinterest.com/pin/1134203487439402862/"
+      },
+      {
+        "src": "assets/shohei-yoshida/mood-22.jpg",
+        "caption": "The colours, and the contrast between the left and right halves.",
+        "link": "https://www.pinterest.com/pin/1134203487439402818/"
+      },
+      {
+        "src": "assets/shohei-yoshida/mood-23.jpg",
+        "caption": "The colours: sage green, terracotta and deep navy.",
+        "link": "https://www.pinterest.com/pin/1134203487439402856/"
+      },
+      {
+        "src": "assets/shohei-yoshida/mood-24.jpg",
+        "caption": "The balance between the collage and the text, and the consistent colour scheme.",
+        "link": "https://www.pinterest.com/pin/1134203487439402747/"
+      },
+      {
+        "src": "assets/shohei-yoshida/mood-25.jpg",
+        "caption": "The contrast of only the framed area being in focus, and the warm colours of the knit.",
+        "link": "https://www.pinterest.com/pin/1134203487439401728/"
+      },
+      {
+        "src": "assets/shohei-yoshida/mood-26.jpg",
+        "caption": "Breaking part of the photo down into pixels, and the olive green and cobalt blue colours.",
+        "link": "https://www.pinterest.com/pin/1134203487439402232/"
+      },
+      {
+        "src": "assets/shohei-yoshida/mood-27.jpg",
+        "caption": "Layering machinery inside a human hand, and the muted grey-green background.",
+        "link": "https://www.pinterest.com/pin/1134203487439401685/"
+      }
+    ],
+    "kitPages": [],
+    "cover": "assets/shohei-yoshida/guide-01.jpg",
+    "guide": [
+      "assets/shohei-yoshida/guide-01.jpg",
+      "assets/shohei-yoshida/guide-02.jpg",
+      "assets/shohei-yoshida/guide-03.jpg",
+      "assets/shohei-yoshida/guide-04.jpg",
+      "assets/shohei-yoshida/guide-05.jpg",
+      "assets/shohei-yoshida/guide-06.jpg",
+      "assets/shohei-yoshida/guide-07.jpg",
+      "assets/shohei-yoshida/guide-08.jpg",
+      "assets/shohei-yoshida/guide-09.jpg",
+      "assets/shohei-yoshida/guide-10.jpg",
+      "assets/shohei-yoshida/guide-11.jpg"
+    ],
+    "cards": [
+      "assets/shohei-yoshida/cards-01.jpg",
+      "assets/shohei-yoshida/cards-02.jpg"
+    ],
+    "carousel": [
+      "assets/shohei-yoshida/carousel-01.jpg",
+      "assets/shohei-yoshida/carousel-02.jpg",
+      "assets/shohei-yoshida/carousel-03.jpg",
+      "assets/shohei-yoshida/carousel-04.jpg",
+      "assets/shohei-yoshida/carousel-05.jpg",
+      "assets/shohei-yoshida/carousel-06.jpg",
+      "assets/shohei-yoshida/carousel-07.jpg"
+    ]
+  }
+];
+</script>
+
+<script>
+const C = window.COURSE || {};
+const BRANDS = window.BRANDS || [];
+const app = document.getElementById("app");
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const pad = n => String(n).padStart(2, "0");
+/* painted strokes, in the spirit of the DAUM arrow set (slight wobble, round caps) */
+const STROKE = {
+  arrow: c => `<svg viewBox="0 0 120 10" preserveAspectRatio="none" aria-hidden="true"><g fill="none" stroke="${c}" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"><path d="M2 6 C 30 1, 60 9, 100 5"/><path d="M92 1 L104 5 L92 9"/></g></svg>`,
+  under: c => `<svg viewBox="0 0 90 10" preserveAspectRatio="none" aria-hidden="true"><path d="M2 6 C 20 2, 40 9, 60 5 S 84 3, 88 6" fill="none" stroke="${c}" stroke-width="5" stroke-linecap="round"/></svg>`,
+  dash:  c => `<svg viewBox="0 0 60 8" preserveAspectRatio="none" aria-hidden="true"><path d="M2 5 C 18 1, 36 7, 58 4" fill="none" stroke="${c}" stroke-width="4" stroke-linecap="round"/></svg>`
+};
+const MONTHS = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+const DAYS = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+function fmtDate(iso) {
+  const [y, m, d] = iso.split("-").map(Number);
+  const dt = new Date(y, m - 1, d);
+  return `${DAYS[dt.getDay()]} ${d} ${MONTHS[m - 1]}`;
+}
+const highlightTitle = t => esc(t).replace(/(\S+)$/, "<mark>$1</mark>");   // highlighter on the last word
+
+function bar(where) {
+  const item = (href, text, key) => `<a href="${href}" ${where === key ? 'aria-current="page"' : ""}>${text}${STROKE.under("var(--cobalt)")}</a>`;
+  return `<header class="bar"><div class="wrap">
+    <a class="home" href="#">${esc(C.title)}</a>
+    <nav aria-label="Site">${item("#", "Syllabus", "home")}${item("#work", "Student work", "brands")}</nav>
+  </div></header>`;
+}
+function footer() {
+  return `<footer class="site wrap">
+    <span>${esc(C.instructor)} · School of Design and Science</span>
+    <img src="assets/daum-mark.svg" alt="">
+  </footer>`;
+}
+
+function tile(b) {
+  const img = b.logo
+    ? `<img class="logo" src="${esc(b.logo)}" alt="${esc(b.brand || b.name)} mark" loading="lazy">`
+    : `<img class="full" src="${esc(b.cover)}" alt="${esc(b.brand || b.name)} cover" loading="lazy">`;
+  return `<a class="tile" href="#${esc(b.slug)}" style="--tile:${esc(b.tileBg || b.accent)};--accent:${esc(b.accent)}">
+    <div class="cover">${img}</div>
+    <span class="cap">${esc(b.name)}</span>
+  </a>`;
+}
+
+/* ---------- home: the syllabus ---------- */
+function renderHome() {
+  document.title = C.title;
+  document.documentElement.style.removeProperty("--accent");
+  const today = new Date(); today.setHours(0, 0, 0, 0);
+  const sched = C.schedule || [];
+  const nextIdx = sched.findIndex(s => { const [y, m, d] = s.date.split("-").map(Number); return new Date(y, m - 1, d) >= today; });
+  const rows = sched.map((s, i) => {
+    const cls = i === nextIdx ? "next" : (nextIdx === -1 || i < nextIdx ? "past" : "");
+    return `<tr class="${cls}">
+      <td class="wk num">${pad(s.week)}</td>
+      <td class="date">${esc(fmtDate(s.date))}</td>
+      <td class="time">${esc(s.time)}</td>
+      <td class="topic">${esc(s.topic)}${i === nextIdx ? '<span class="chip">Next</span>' : ""}
+        ${s.note ? `<span class="note">${s.noteLink ? `<a class="quiet" style="font-weight:500;text-decoration:underline;text-decoration-color:var(--cobalt);text-underline-offset:3px" href="${esc(s.noteLink)}" target="_blank" rel="noopener">${esc(s.note)} ↗</a>` : esc(s.note)}</span>` : ""}
+      </td></tr>`;
+  }).join("");
+  const dashes = ["var(--vermilion)", "var(--cobalt)", "var(--butter)"];
+
+  app.innerHTML = `${bar("home")}
+    <main class="wrap">
+      <div class="hero">
+        <h1>${highlightTitle(C.title)}</h1>
+        <div class="ja">${esc(C.titleJa)}</div>
+        <div class="label" style="margin-top:var(--s2)">Instructor: <span style="color:var(--ink)">${esc(C.instructor)}</span></div>
+        <div class="offered">
+          <span class="label">Offered by</span>
+          <img src="assets/sds-logo.png" alt="Chiba Tech School of Design & Science">
+          <img class="dabtong" src="assets/dabtong-logo.svg" alt="Dabtong House">
+        </div>
+      </div>
+
+      <section class="block" id="course">
+        <div class="label">The course</div>
+        <div><p class="lede">${esc(C.description)}</p></div>
+      </section>
+
+      <section class="block" id="outcomes">
+        <div class="label">Learning outcomes</div>
+        <div>
+          <p class="small" style="margin:0 0 var(--s4)">${esc(C.outcomesIntro)}</p>
+          <ul class="outcomes">${(C.outcomes || []).map((o, i) => `<li>${STROKE.dash(dashes[i % 3])}${esc(o)}</li>`).join("")}</ul>
+        </div>
+      </section>
+
+      <section class="block" id="schedule">
+        <div class="label">Schedule</div>
+        <div>
+          <div style="overflow-x:auto"><table class="sched">
+            <thead><tr><th class="label" style="color:var(--ink)">Wk</th><th class="label" style="color:var(--ink)">Date</th><th class="label time" style="color:var(--ink)">Tokyo</th><th class="label" style="color:var(--ink)">Classwork</th></tr></thead>
+            <tbody>${rows}</tbody>
+          </table></div>
+          <div class="sched-notes">${(C.scheduleNotes || []).map(n => `<span>${esc(n)}</span>`).join("")}</div>
+        </div>
+      </section>
+
+    </main>${footer()}`;
+}
+
+/* ---------- passcode gate ---------- */
+const UNLOCK_KEY = "dmf-work-unlocked";
+function isUnlocked() {
+  if (!C.passHash) return true;
+  try { return localStorage.getItem(UNLOCK_KEY) === C.passHash; } catch (e) { return window.__unlocked === C.passHash; }
+}
+function remember() {
+  window.__unlocked = C.passHash;
+  try { localStorage.setItem(UNLOCK_KEY, C.passHash); } catch (e) {}
+}
+async function sha256(text) {
+  const bytes = new TextEncoder().encode(text);
+  if (window.crypto && crypto.subtle) {
+    const buf = await crypto.subtle.digest("SHA-256", bytes);
+    return [...new Uint8Array(buf)].map(b => b.toString(16).padStart(2, "0")).join("");
+  }
+  return sha256js(bytes);
+}
+function sha256js(m) { // compact fallback for contexts without Web Crypto
+  const K = [0x428a2f98,0x71374491,0xb5c0fbcf,0xe9b5dba5,0x3956c25b,0x59f111f1,0x923f82a4,0xab1c5ed5,0xd807aa98,0x12835b01,0x243185be,0x550c7dc3,0x72be5d74,0x80deb1fe,0x9bdc06a7,0xc19bf174,0xe49b69c1,0xefbe4786,0x0fc19dc6,0x240ca1cc,0x2de92c6f,0x4a7484aa,0x5cb0a9dc,0x76f988da,0x983e5152,0xa831c66d,0xb00327c8,0xbf597fc7,0xc6e00bf3,0xd5a79147,0x06ca6351,0x14292967,0x27b70a85,0x2e1b2138,0x4d2c6dfc,0x53380d13,0x650a7354,0x766a0abb,0x81c2c92e,0x92722c85,0xa2bfe8a1,0xa81a664b,0xc24b8b70,0xc76c51a3,0xd192e819,0xd6990624,0xf40e3585,0x106aa070,0x19a4c116,0x1e376c08,0x2748774c,0x34b0bcb5,0x391c0cb3,0x4ed8aa4a,0x5b9cca4f,0x682e6ff3,0x748f82ee,0x78a5636f,0x84c87814,0x8cc70208,0x90befffa,0xa4506ceb,0xbef9a3f7,0xc67178f2];
+  let H = [0x6a09e667,0xbb67ae85,0x3c6ef372,0xa54ff53a,0x510e527f,0x9b05688c,0x1f83d9ab,0x5be0cd19];
+  const l = m.length, L = ((l + 9 + 63) >> 6) << 6, b = new Uint8Array(L); b.set(m); b[l] = 0x80;
+  const dv = new DataView(b.buffer); dv.setUint32(L - 4, l * 8 >>> 0); dv.setUint32(L - 8, Math.floor(l * 8 / 4294967296));
+  const rot = (x, n) => (x >>> n) | (x << (32 - n)), W = new Uint32Array(64);
+  for (let i = 0; i < L; i += 64) {
+    for (let t = 0; t < 16; t++) W[t] = dv.getUint32(i + t * 4);
+    for (let t = 16; t < 64; t++) { const s0 = rot(W[t-15],7) ^ rot(W[t-15],18) ^ (W[t-15] >>> 3), s1 = rot(W[t-2],17) ^ rot(W[t-2],19) ^ (W[t-2] >>> 10); W[t] = (W[t-16] + s0 + W[t-7] + s1) >>> 0; }
+    let [a, bb, c, d, e, f, g, h] = H;
+    for (let t = 0; t < 64; t++) {
+      const S1 = rot(e,6) ^ rot(e,11) ^ rot(e,25), ch = (e & f) ^ (~e & g), t1 = (h + S1 + ch + K[t] + W[t]) >>> 0;
+      const S0 = rot(a,2) ^ rot(a,13) ^ rot(a,22), mj = (a & bb) ^ (a & c) ^ (bb & c), t2 = (S0 + mj) >>> 0;
+      h = g; g = f; f = e; e = (d + t1) >>> 0; d = c; c = bb; bb = a; a = (t1 + t2) >>> 0;
+    }
+    H = H.map((v, k) => (v + [a, bb, c, d, e, f, g, h][k]) >>> 0);
+  }
+  return H.map(v => v.toString(16).padStart(8, "0")).join("");
+}
+function renderGate(after) {
+  document.title = `Student work · ${C.title}`;
+  document.documentElement.style.removeProperty("--accent");
+  app.innerHTML = `${bar("brands")}
+    <main class="wrap">
+      <div class="gate">
+        <div class="label">Student work</div>
+        <h1>This part of the site is for the class.</h1>
+        <p>Enter the passcode from the course to see the students' work.</p>
+        <form id="gateform" novalidate>
+          <div class="field"><label class="label" for="passcode">Passcode</label><input id="passcode" name="passcode" type="password" autocomplete="off" autocapitalize="off" spellcheck="false" required></div>
+          <button type="submit" class="plink"><span>Open</span>${STROKE.arrow("var(--cobalt)")}</button>
+        </form>
+        <div class="err" id="gateerr" aria-live="polite"></div>
+      </div>
+    </main>${footer()}`;
+  const form = document.getElementById("gateform"), input = document.getElementById("passcode"), err = document.getElementById("gateerr");
+  input.focus();
+  form.addEventListener("submit", async e => {
+    e.preventDefault();
+    const h = await sha256(input.value.trim());
+    if (h === C.passHash) { remember(); after(); }
+    else { err.textContent = "That passcode isn't right. Check the one from class and try again."; input.select(); }
+  });
+}
+
+/* ---------- student work ---------- */
+function renderWork() {
+  if (!isUnlocked()) return renderGate(renderWork);
+  document.title = `Student work · ${C.title}`;
+  document.documentElement.style.removeProperty("--accent");
+  app.innerHTML = `${bar("brands")}
+    <main class="wrap">
+      <div class="section-head">
+        <h1>Student work</h1>
+        <p>${esc(C.workIntro || "")}</p>
+      </div>
+      <section class="work-section" id="brands">
+        <div class="label">Week <span class="num">03</span> · Visuals — Brand Identity</div>
+        <h2>Personal Brands</h2>
+        <p class="small" style="margin:0;max-width:60ch">${esc(C.brandsIntro)}</p>
+        ${BRANDS.length ? `<div class="grid" style="padding-top:var(--s2)">${BRANDS.map(tile).join("")}</div>` : `<p class="empty">No brands yet. Add each student's folder to <code>Personal Brands/</code> and run <code>python3 build.py</code>.</p>`}
+      </section>
+    </main>${footer()}`;
+}
+
+/* ---------- one brand ---------- */
+function renderBrand(b, idx) {
+  if (!isUnlocked()) return renderGate(() => renderBrand(b, idx));
+  document.title = `${b.brand || b.name} · ${C.title}`;
+  document.documentElement.style.setProperty("--accent", b.accent || "#1e1d1b");
+  const prev = BRANDS[(idx - 1 + BRANDS.length) % BRANDS.length];
+  const next = BRANDS[(idx + 1) % BRANDS.length];
+  const n = b.guide.length;
+  const pages = b.guide.map((src, i) => `
+    <figure class="page" style="margin:0">
+      <button type="button" data-lb="${i}" aria-label="Open page ${i + 1} large"><img src="${esc(src)}" alt="Brand guide page ${i + 1} of ${n}" loading="${i < 2 ? "eager" : "lazy"}"></button>
+      <figcaption class="folio label"><span><span class="num">${pad(i + 1)}</span> / ${pad(n)}</span><span>${i === 0 ? "Cover" : ""}</span></figcaption>
+    </figure>`).join("");
+  const cardLabels = ["Front", "Back"];
+  const cards = b.cards.map((src, i) => `
+    <figure class="card" style="margin:0"><img src="${esc(src)}" alt="Business card ${cardLabels[i] || i + 1}"><figcaption class="label">${cardLabels[i] || "Side " + (i + 1)}</figcaption></figure>`).join("");
+  const slides = b.carousel.map((src, i) => `
+    <div class="slide" data-i="${i}"><img src="${esc(src)}" alt="Carousel slide ${i + 1} of ${b.carousel.length}" loading="${i < 3 ? "eager" : "lazy"}"></div>`).join("");
+  const links = Object.entries(b.links || {}).map(([k, v]) => `<a class="plink sm" href="${esc(v)}" target="_blank" rel="noopener"><span>${esc(k)}</span>${STROKE.arrow("var(--cobalt)")}</a>`).join("");
+
+  app.innerHTML = `${bar("brands")}
+    <main class="wrap" style="--tile:${esc(b.tileBg || b.accent)}">
+      <div class="head">
+        <div class="cover"><img src="${esc(b.cover)}" alt="${esc(b.brand || b.name)} — cover"></div>
+        <div class="title">
+          <div>
+            <div class="label" style="margin-bottom:var(--s3)"><a href="#work" style="text-decoration:none">Student work</a> · Personal Brands</div>
+            <h1>${esc(b.brand || b.name)}</h1>
+            <div class="by"><span class="name">${esc(b.name)}</span>${b.role ? `<span class="role">${esc(b.role)}</span>` : ""}</div>
+          </div>
+          <div class="side">
+            ${b.tagline ? `<p class="tag">${esc(b.tagline)}</p>` : ""}
+            ${b.words && b.words.length ? `<div class="words">${b.words.map(w => `<span>${esc(w)}</span>`).join("")}</div>` : ""}
+          </div>
+        </div>
+      </div>
+
+      ${(b.moodboard && b.moodboard.length) || (b.kitPages && b.kitPages.length) ? `<section class="part" id="moodboard">
+        <div class="part-head"><h2>Moodboard</h2><span class="note small">Week <span class="num">02</span> · Brand kit. The references ${esc(b.name.split(" ")[0])} collected before designing, with the notes on what to take from each.</span></div>
+        ${b.moodboard && b.moodboard.length ? `<div class="mood">${b.moodboard.map((m, i) => `
+          <figure>${m.link ? `<a href="${esc(m.link)}" target="_blank" rel="noopener">` : '<a>'}<img src="${esc(m.src)}" alt="Reference ${i + 1}" loading="lazy"></a>${m.caption ? `<figcaption>${esc(m.caption)}</figcaption>` : ""}</figure>`).join("")}</div>` : ""}
+        ${b.kitPages && b.kitPages.length ? `<div class="kit-pages">${b.kitPages.map((src, i) => `<img src="${esc(src)}" alt="Brand kit page ${i + 1}" loading="lazy">`).join("")}</div>` : ""}
+      </section>` : ""}
+
+      ${n ? `<section class="part" id="guide">
+        <div class="part-head"><h2>Brand guide</h2><span class="note small">Week <span class="num">03</span> · ${n} pages. Click a page to read it large.</span></div>
+        <div class="pages">${pages}</div>
+      </section>` : ""}
+
+      ${b.cards.length ? `<section class="part" id="cards">
+        <div class="part-head"><h2>Business card</h2><span class="note small">The identity applied to a card, front and back.</span></div>
+        <div class="desk">${cards}</div>
+      </section>` : ""}
+
+      ${b.carousel.length ? `<section class="part" id="carousel">
+        <div class="part-head"><h2>${esc(b.carouselTitle || "Carousel")}</h2><span class="note small">${b.carousel.length} ${b.carousel.length === 1 ? "slide" : "slides"} · scroll sideways or use the arrows.</span></div>
+        <div class="rail" id="rail" tabindex="0" aria-label="${esc(b.carouselTitle || "Carousel")}">${slides}</div>
+        <div class="rail-ctl">
+          <button type="button" id="rprev">← Previous</button>
+          <button type="button" id="rnext">Next →</button>
+          <span class="cnt" id="rcnt">01 / ${pad(b.carousel.length)}</span>
+        </div>
+      </section>` : ""}
+
+      <section class="credits">
+        <div>
+          <div class="label" style="margin-bottom:var(--s3)">Credits</div>
+          <div class="who">${esc(b.credit || "Designed by " + b.name)}</div>
+          <div class="lines small"><span>${esc(C.title)} · ${esc(C.school)}</span><span>${esc(C.term)}</span></div>
+          ${links ? `<div class="links">${links}</div>` : ""}
+        </div>
+        ${b.logo ? `<div class="mark"><img src="${esc(b.logo)}" alt=""></div>` : ""}
+      </section>
+
+      <nav class="pn" aria-label="Other brands">
+        ${BRANDS.length > 1 ? `<a href="#${esc(prev.slug)}"><span class="label">← Previous</span><span class="t">${esc(prev.brand || prev.name)}</span></a>
+        <a href="#${esc(next.slug)}"><span class="label">Next →</span><span class="t">${esc(next.brand || next.name)}</span></a>` :
+        `<a href="#work"><span class="label">← Back</span><span class="t">Student work</span></a>`}
+      </nav>
+    </main>${footer()}`;
+
+  const rail = document.getElementById("rail");
+  if (rail) {
+    const cnt = document.getElementById("rcnt");
+    const slidesEl = [...rail.querySelectorAll(".slide")];
+    const current = () => {
+      let best = 0, bd = Infinity;
+      slidesEl.forEach((s, i) => { const d = Math.abs(s.offsetLeft - rail.scrollLeft); if (d < bd) { bd = d; best = i; } });
+      return best;
+    };
+    const go = i => { i = Math.max(0, Math.min(slidesEl.length - 1, i)); rail.scrollTo({ left: slidesEl[i].offsetLeft, behavior: "smooth" }); };
+    rail.addEventListener("scroll", () => { cnt.textContent = `${pad(current() + 1)} / ${pad(slidesEl.length)}`; }, { passive: true });
+    document.getElementById("rprev").addEventListener("click", () => go(current() - 1));
+    document.getElementById("rnext").addEventListener("click", () => go(current() + 1));
+    rail.addEventListener("keydown", e => { if (e.key === "ArrowRight") { e.preventDefault(); go(current() + 1); } if (e.key === "ArrowLeft") { e.preventDefault(); go(current() - 1); } });
+  }
+  app.querySelectorAll("[data-lb]").forEach(btn => btn.addEventListener("click", () => openLightbox(b, +btn.dataset.lb)));
+}
+
+function openLightbox(b, i) {
+  const n = b.guide.length;
+  const lb = document.createElement("div");
+  lb.className = "lb"; lb.setAttribute("role", "dialog"); lb.setAttribute("aria-label", "Brand guide page");
+  const paint = () => {
+    lb.innerHTML = `<div class="top"><span class="label">${esc(b.brand || b.name)} · <span class="num">${pad(i + 1)}</span> / ${pad(n)}</span>
+      <div class="nav"><button type="button" id="lbp">← Previous</button><button type="button" id="lbn">Next →</button><button type="button" id="lbx">Close</button></div></div>
+      <div class="stage"><img src="${esc(b.guide[i])}" alt="Brand guide page ${i + 1}"></div>`;
+    lb.querySelector("#lbp").onclick = () => { i = (i - 1 + n) % n; paint(); };
+    lb.querySelector("#lbn").onclick = () => { i = (i + 1) % n; paint(); };
+    lb.querySelector("#lbx").onclick = close;
+    lb.querySelector("#lbx").focus();
+  };
+  const key = e => { if (e.key === "Escape") close(); if (e.key === "ArrowRight") { i = (i + 1) % n; paint(); } if (e.key === "ArrowLeft") { i = (i - 1 + n) % n; paint(); } };
+  const close = () => { lb.remove(); document.removeEventListener("keydown", key); document.body.style.overflow = ""; };
+  lb.addEventListener("click", e => { if (e.target.classList.contains("stage") || e.target === lb) close(); });
+  document.addEventListener("keydown", key);
+  document.body.style.overflow = "hidden";
+  paint();
+  document.body.appendChild(lb);
+}
+
+function route() {
+  const slug = decodeURIComponent(location.hash.replace(/^#/, ""));
+  if (slug === "work" || slug === "brands") renderWork();
+  else {
+    const idx = BRANDS.findIndex(b => b.slug === slug);
+    if (idx >= 0) renderBrand(BRANDS[idx], idx); else renderHome();
+  }
+  window.scrollTo(0, 0);
+}
+window.addEventListener("hashchange", route);
+route();
+</script>
+</body>
+</html>

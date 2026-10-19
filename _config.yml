@@ -146,6 +146,13 @@ include:
   - _pages
   - files
 exclude:
+  - class/DMF/2026/build.py
+  - class/DMF/2026/template.html
+  - class/DMF/2026/course.json
+  - class/DMF/2026/brands.js
+  - class/DMF/2026/README.md
+  - class/DMF/2026/local.json
+  - class/DMF/2026/passcode.txt
   - "*.sublime-project"
   - "*.sublime-workspace"
   - .asset-cache
@@ -214,6 +221,11 @@ collections:
 
 # Defaults
 defaults:
+  # /class — unlisted course pages: not in the sitemap
+  - scope:
+      path: "class"
+    values:
+      sitemap: false
   # _posts
   - scope:
       path: ""

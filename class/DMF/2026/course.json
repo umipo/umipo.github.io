@@ -1,0 +1,103 @@
+{
+  "title": "Digital Media & Flourishing",
+  "titleJa": "デジタルメディアと成長特論",
+  "term": "Fall 2026",
+  "school": "School of Design and Science, Chiba Tech",
+  "instructor": "Daum Kim",
+  "format": "Online · Wednesdays 13:00–15:00 Tokyo",
+  "description": "How is digital media shaping our world, our perceptions, and the way we communicate and think? In this course, we explore the mechanisms driving new cultural and societal trends in digital media. We examine the relationship between technology, its functions, and human experience, along with the nature of the digital world and how it influences our lives.",
+  "outcomesIntro": "I wish the class will guide you to:",
+  "outcomes": [
+    "Develop an understanding of theories of narrative, intergroup contact, digital architecture, and media design.",
+    "Explore how concepts such as attention, trust, value, and belonging emerge and operate within digital environments.",
+    "Gain hands-on experience creating digital content across formats — writing, visual identity, short-form and long-form video, and AI-assisted design.",
+    "Design and critique platform functions, reflecting on how the architecture of digital platforms influences interaction, behaviour, trust, and flourishing.",
+    "Consider how digital media shapes encounters across difference, including its potential to both divide and connect people."
+  ],
+  "schedule": [
+    {
+      "week": 1,
+      "date": "2026-09-30",
+      "time": "13:00–15:00",
+      "topic": "Introduction to Digital Media"
+    },
+    {
+      "week": 2,
+      "date": "2026-10-07",
+      "time": "13:00–15:00",
+      "topic": "Narrative + Write"
+    },
+    {
+      "week": 3,
+      "date": "2026-10-14",
+      "time": "13:00–15:00",
+      "topic": "Visuals — Brand Identity",
+      "work": "brands"
+    },
+    {
+      "week": 4,
+      "date": "2026-10-21",
+      "time": "13:00–15:00",
+      "topic": "Brand Narrative & Engagement"
+    },
+    {
+      "week": 5,
+      "date": "2026-10-28",
+      "time": "13:00–15:00",
+      "topic": "Attention",
+      "note": "Guest speaker: Dr. Gal Raz",
+      "noteLink": "https://galraz.github.io/"
+    },
+    {
+      "week": 6,
+      "date": "2026-11-04",
+      "time": "13:00–15:00",
+      "topic": "Introduction to Video"
+    },
+    {
+      "week": 7,
+      "date": "2026-11-11",
+      "time": "13:00–15:00",
+      "topic": "Documentary",
+      "note": "Guest speaker: Hiro Kay, NHK World producer"
+    },
+    {
+      "week": 8,
+      "date": "2026-11-18",
+      "time": "13:00–16:00",
+      "topic": "Shorts",
+      "note": "Three-hour session"
+    },
+    {
+      "week": 9,
+      "date": "2026-11-25",
+      "time": "13:00–15:00",
+      "topic": "Long-Form Video Creation (1)"
+    },
+    {
+      "week": 10,
+      "date": "2026-12-02",
+      "time": "13:00–15:00",
+      "topic": "Long-Form Video Creation (2)"
+    },
+    {
+      "week": 11,
+      "date": "2026-12-09",
+      "time": "13:00–16:00",
+      "topic": "Flourishing",
+      "note": "Three-hour session"
+    },
+    {
+      "week": 12,
+      "date": "2026-12-16",
+      "time": "13:00–15:00",
+      "topic": "Final Project Presentations"
+    }
+  ],
+  "scheduleNotes": [
+    "Every session meets online on Wednesdays. The November 18 and December 9 classes are three hours long to make up for the class that falls on Silver Week.",
+    "This syllabus may change during the semester; any changes will be announced. Revised 19 October 2026."
+  ],
+  "brandsIntro": "In Week 3 each student designed a personal brand from the ground up: a brand guide, a business card, and a story told as a social carousel.",
+  "workIntro": "Work made in the course by the students, shared with the class of 2026"
+}
