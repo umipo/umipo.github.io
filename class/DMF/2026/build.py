@@ -238,6 +238,8 @@ def save_logo(src, out_dir):
         im = im.resize((int(w * 1200 / max(w, h)), int(h * 1200 / max(w, h))), Image.LANCZOS)
     out = out_dir / "logo.png"
     im.save(out, "PNG", optimize=True)
+    global _logo_wide
+    _logo_wide = im.width / im.height > 2.5          # a wordmark rather than a square mark
     r, g, b, a = im.getpixel((2, 2))
     bg = "#%02x%02x%02x" % (r, g, b) if a > 250 else ""
     return out.relative_to(SITE).as_posix(), bg
@@ -266,6 +268,8 @@ def build_student(folder):
     result = {"guide": [], "cards": [], "carousel": []}
     widths = {"guide": GUIDE_W, "cards": CARD_W, "carousel": CAROUSEL_W}
     logo, tile_bg = "", ""
+    global _logo_wide
+    _logo_wide = False
     if groups["logo"]:
         logo, tile_bg = save_logo(groups["logo"][0], out_dir)
     moodboard, kit_pages, brief = [], [], []
@@ -304,6 +308,7 @@ def build_student(folder):
         "carouselTitle": meta.get("carouselTitle", ""),
         "accent": accent,
         "logo": logo,
+        "logoWide": _logo_wide,
         "tileBg": meta.get("tileBg", tile_bg or accent),
         "moodboard": moodboard,
         "kitPages": kit_pages,

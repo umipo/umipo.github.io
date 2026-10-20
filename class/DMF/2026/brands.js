@@ -16,9 +16,10 @@ window.BRANDS = [
       "Premium-quality",
       "Trusted"
     ],
-    "carouselTitle": "",
+    "carouselTitle": "On the trail",
     "accent": "#d2a03c",
     "logo": "assets/dawa-tashi/logo.png",
+    "logoWide": false,
     "tileBg": "#d2a03c",
     "moodboard": [],
     "kitPages": [],
@@ -40,7 +41,15 @@ window.BRANDS = [
       "assets/dawa-tashi/cards-01.jpg",
       "assets/dawa-tashi/cards-02.jpg"
     ],
-    "carousel": []
+    "carousel": [
+      "assets/dawa-tashi/carousel-01.jpg",
+      "assets/dawa-tashi/carousel-02.jpg",
+      "assets/dawa-tashi/carousel-03.jpg",
+      "assets/dawa-tashi/carousel-04.jpg",
+      "assets/dawa-tashi/carousel-05.jpg",
+      "assets/dawa-tashi/carousel-06.jpg",
+      "assets/dawa-tashi/carousel-07.jpg"
+    ]
   },
   {
     "slug": "kinley-dorji",
@@ -61,6 +70,7 @@ window.BRANDS = [
     "carouselTitle": "Where I live",
     "accent": "#3f6b3a",
     "logo": "assets/kinley-dorji/logo.png",
+    "logoWide": false,
     "tileBg": "#3f6b3a",
     "moodboard": [],
     "kitPages": [
@@ -101,6 +111,51 @@ window.BRANDS = [
     ]
   },
   {
+    "slug": "kotaro-iwata",
+    "name": "Kotaro Iwata",
+    "brand": "Kotaro",
+    "tagline": "Show the figure and the number, not an adjective.",
+    "credit": "Designed by Kotaro Iwata",
+    "links": {},
+    "order": 999,
+    "role": "Researcher: multi-objective optimisation on dynamic terrain",
+    "words": [
+      "Refined",
+      "Technical",
+      "Measured",
+      "Cool",
+      "Genuine"
+    ],
+    "carouselTitle": "",
+    "accent": "#0e1419",
+    "logo": "assets/kotaro-iwata/logo.png",
+    "logoWide": false,
+    "tileBg": "#0e1419",
+    "moodboard": [],
+    "kitPages": [],
+    "cover": "assets/kotaro-iwata/guide-01.jpg",
+    "guide": [
+      "assets/kotaro-iwata/guide-01.jpg",
+      "assets/kotaro-iwata/guide-02.jpg",
+      "assets/kotaro-iwata/guide-03.jpg",
+      "assets/kotaro-iwata/guide-04.jpg",
+      "assets/kotaro-iwata/guide-05.jpg",
+      "assets/kotaro-iwata/guide-06.jpg",
+      "assets/kotaro-iwata/guide-07.jpg",
+      "assets/kotaro-iwata/guide-08.jpg",
+      "assets/kotaro-iwata/guide-09.jpg",
+      "assets/kotaro-iwata/guide-10.jpg",
+      "assets/kotaro-iwata/guide-11.jpg",
+      "assets/kotaro-iwata/guide-12.jpg",
+      "assets/kotaro-iwata/guide-13.jpg"
+    ],
+    "cards": [
+      "assets/kotaro-iwata/cards-01.jpg",
+      "assets/kotaro-iwata/cards-02.jpg"
+    ],
+    "carousel": []
+  },
+  {
     "slug": "kuenga-namgay",
     "name": "Kuenga Namgay",
     "brand": "Kuenga Namgay",
@@ -116,9 +171,10 @@ window.BRANDS = [
       "Honest",
       "Rooted"
     ],
-    "carouselTitle": "",
+    "carouselTitle": "A Place I Live",
     "accent": "#1b1612",
     "logo": "assets/kuenga-namgay/logo.png",
+    "logoWide": false,
     "tileBg": "#1b1612",
     "moodboard": [],
     "kitPages": [
@@ -151,8 +207,21 @@ window.BRANDS = [
       "assets/kuenga-namgay/guide-10.jpg",
       "assets/kuenga-namgay/guide-11.jpg"
     ],
-    "cards": [],
-    "carousel": []
+    "cards": [
+      "assets/kuenga-namgay/cards-01.jpg",
+      "assets/kuenga-namgay/cards-02.jpg"
+    ],
+    "carousel": [
+      "assets/kuenga-namgay/carousel-01.jpg",
+      "assets/kuenga-namgay/carousel-02.jpg",
+      "assets/kuenga-namgay/carousel-03.jpg",
+      "assets/kuenga-namgay/carousel-04.jpg",
+      "assets/kuenga-namgay/carousel-05.jpg",
+      "assets/kuenga-namgay/carousel-06.jpg",
+      "assets/kuenga-namgay/carousel-07.jpg",
+      "assets/kuenga-namgay/carousel-08.jpg",
+      "assets/kuenga-namgay/carousel-09.jpg"
+    ]
   },
   {
     "slug": "kuenzang-namgyel",
@@ -174,6 +243,7 @@ window.BRANDS = [
     "carouselTitle": "The Childhood I Get to Live Twice",
     "accent": "#2436c9",
     "logo": "assets/kuenzang-namgyel/logo.png",
+    "logoWide": false,
     "tileBg": "#2436c9",
     "moodboard": [
       {
@@ -343,9 +413,10 @@ window.BRANDS = [
       "Timeless",
       "Intriguing"
     ],
-    "carouselTitle": "",
+    "carouselTitle": "Where I live",
     "accent": "#b5532e",
     "logo": "assets/kunzang-p-c/logo.png",
+    "logoWide": false,
     "tileBg": "#b5532e",
     "moodboard": [],
     "kitPages": [
@@ -370,7 +441,72 @@ window.BRANDS = [
       "assets/kunzang-p-c/cards-01.jpg",
       "assets/kunzang-p-c/cards-02.jpg"
     ],
-    "carousel": []
+    "carousel": [
+      "assets/kunzang-p-c/carousel-01.jpg",
+      "assets/kunzang-p-c/carousel-02.jpg",
+      "assets/kunzang-p-c/carousel-03.jpg",
+      "assets/kunzang-p-c/carousel-04.jpg",
+      "assets/kunzang-p-c/carousel-05.jpg",
+      "assets/kunzang-p-c/carousel-06.jpg",
+      "assets/kunzang-p-c/carousel-07.jpg",
+      "assets/kunzang-p-c/carousel-08.jpg",
+      "assets/kunzang-p-c/carousel-09.jpg",
+      "assets/kunzang-p-c/carousel-10.jpg"
+    ]
+  },
+  {
+    "slug": "madoka",
+    "name": "Madoka",
+    "brand": "Journa",
+    "tagline": "Loud on the surface and warm underneath.",
+    "credit": "Designed by Madoka",
+    "links": {},
+    "order": 999,
+    "role": "Founder, Journa",
+    "words": [
+      "Pop",
+      "Soulful",
+      "Warm",
+      "Modern-mystical",
+      "Empowering"
+    ],
+    "carouselTitle": "Where I live",
+    "accent": "#ea106b",
+    "logo": "assets/madoka/logo.png",
+    "logoWide": true,
+    "tileBg": "#ea106b",
+    "moodboard": [],
+    "kitPages": [],
+    "cover": "assets/madoka/guide-01.jpg",
+    "guide": [
+      "assets/madoka/guide-01.jpg",
+      "assets/madoka/guide-02.jpg",
+      "assets/madoka/guide-03.jpg",
+      "assets/madoka/guide-04.jpg",
+      "assets/madoka/guide-05.jpg",
+      "assets/madoka/guide-06.jpg",
+      "assets/madoka/guide-07.jpg",
+      "assets/madoka/guide-08.jpg",
+      "assets/madoka/guide-09.jpg",
+      "assets/madoka/guide-10.jpg",
+      "assets/madoka/guide-11.jpg"
+    ],
+    "cards": [
+      "assets/madoka/cards-01.jpg",
+      "assets/madoka/cards-02.jpg"
+    ],
+    "carousel": [
+      "assets/madoka/carousel-01.jpg",
+      "assets/madoka/carousel-02.jpg",
+      "assets/madoka/carousel-03.jpg",
+      "assets/madoka/carousel-04.jpg",
+      "assets/madoka/carousel-05.jpg",
+      "assets/madoka/carousel-06.jpg",
+      "assets/madoka/carousel-07.jpg",
+      "assets/madoka/carousel-08.jpg",
+      "assets/madoka/carousel-09.jpg",
+      "assets/madoka/carousel-10.jpg"
+    ]
   },
   {
     "slug": "shohei-yoshida",
@@ -391,6 +527,7 @@ window.BRANDS = [
     "carouselTitle": "A sign that says Be quiet",
     "accent": "#0000aa",
     "logo": "assets/shohei-yoshida/logo.png",
+    "logoWide": false,
     "tileBg": "#0000aa",
     "moodboard": [
       {
@@ -577,6 +714,7 @@ window.BRANDS = [
     "carouselTitle": "Where I live",
     "accent": "#0b0e16",
     "logo": "assets/sujal-nepal/logo.png",
+    "logoWide": true,
     "tileBg": "#0b0e16",
     "moodboard": [],
     "kitPages": [
@@ -644,6 +782,7 @@ window.BRANDS = [
     "carouselTitle": "",
     "accent": "#c8102e",
     "logo": "assets/tenzin-jambay-wangchuk/logo.png",
+    "logoWide": false,
     "tileBg": "#c8102e",
     "moodboard": [],
     "kitPages": [

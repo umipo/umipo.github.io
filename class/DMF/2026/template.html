@@ -103,6 +103,7 @@ mark{background:linear-gradient(transparent 58%,var(--butter) 58%,var(--butter) 
 .tile{display:grid;gap:12px;text-decoration:none;min-width:0}
 .tile .cover{background:var(--tile,var(--accent));overflow:hidden;position:relative;aspect-ratio:4/3;display:grid;place-items:center}
 .tile .cover img.logo{width:44%;height:auto;max-height:60%;object-fit:contain;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.tile .cover img.logo.wide{width:64%}
 .tile .cover img.full{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
 .tile:hover .cover img.logo{transform:scale(1.06)}
 .tile:hover .cover img.full{transform:scale(1.03)}
@@ -270,7 +271,7 @@ function footer() {
 
 function tile(b) {
   const img = b.logo
-    ? `<img class="logo" src="${esc(b.logo)}" alt="${esc(b.brand || b.name)} mark" loading="lazy">`
+    ? `<img class="logo${b.logoWide ? " wide" : ""}" src="${esc(b.logo)}" alt="${esc(b.brand || b.name)} mark" loading="lazy">`
     : `<img class="full" src="${esc(b.cover)}" alt="${esc(b.brand || b.name)} cover" loading="lazy">`;
   return `<a class="tile" href="#${esc(b.slug)}" style="--tile:${esc(b.tileBg || b.accent)};--accent:${esc(b.accent)}">
     <div class="cover">${img}</div>
