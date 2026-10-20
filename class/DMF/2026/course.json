@@ -99,5 +99,37 @@
     "This syllabus may change during the semester; any changes will be announced. Revised 19 October 2026."
   ],
   "brandsIntro": "In Week 3 each student designed a personal brand from the ground up: a brand guide, a business card, and a story told as a social carousel.",
-  "workIntro": "Work made in the course by the students, shared with the class of 2026"
+  "workIntro": "Work made in the course by the students, shared with the class of 2026",
+  "assignments": [
+    {
+      "id": "week-5",
+      "week": 5,
+      "title": "Before class: a reading on how infants learn",
+      "linkText": "Reading and questions for this session",
+      "intro": "Dr. Gal Raz has set a reading before his session. Note your answers to the two questions before you read, then answer the three questions after.",
+      "reading": {
+        "citation": "Raz, G. & Saxe, R. (2020). Learning in Infancy Is Active, Endogenously Motivated, and Depends on the Prefrontal Cortices. Annual Review of Developmental Psychology, 2, 247–268.",
+        "file": "assets/readings/raz-saxe-2020-learning-in-infancy.pdf",
+        "doi": "https://doi.org/10.1146/annurev-devpsych-121318-084841"
+      },
+      "skip": [
+        "Information-seeking brain: evidence from adults",
+        "Information-seeking brain: evidence from infants",
+        "The social brain: evidence from adults",
+        "The social brain: evidence from infants"
+      ],
+      "before": [
+        "In their first year of life, would you say humans learn more by A) observing whatever happens to be around them, or B) by actively choosing what to engage with?",
+        "What do humans learn first, A) low-level perceptual concepts like color, shapes and movement or B) high-level concepts like social relationships and physical laws (like gravity, collision etc.)?"
+      ],
+      "after": [
+        "Were you convinced that infants' learning depends on active choice of attentional targets?",
+        "Do you agree with the claim that infants have distinct motivations when deciding what to look at?",
+        "Which evidence did you find most convincing? Which evidence left some open questions for you?"
+      ],
+      "submit": "Submit your answers before class on Wednesday 28 October.",
+      "submitLink": "https://drive.google.com/drive/folders/1vwSQQI1SI62uiYdhUmilDRhcmHS3qxRn?usp=sharing",
+      "submitLinkText": "Upload to the Week 5 Drive folder"
+    }
+  ]
 }

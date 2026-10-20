@@ -59,7 +59,10 @@ def render_pdf(pdf, out_dir, prefix, width):
     paths = []
     for i, p in enumerate(pages, 1):
         im = Image.open(p).convert("RGB")
-        paths += save_jpg(im, out_dir / f"{prefix}-{i:02d}.jpg", width, out_dir)
+        if is_blank(im):
+            print(f"   (skipping blank page {i} of {pdf.name})")
+            continue
+        paths += save_jpg(im, out_dir / f"{prefix}-{len(paths) + 1:02d}.jpg", width, out_dir)
     shutil.rmtree(tmpdir, ignore_errors=True)
     return paths
 
@@ -95,6 +98,12 @@ def split_stacked(im):
             s = e - card_h
         out.append(im.crop((0, int(s * scale), W, int(e * scale))))
     return out
+
+def is_blank(im):
+    """True when a rendered page is a single flat colour (an empty or broken page)."""
+    small = im.convert("L").resize((64, 64))
+    lo, hi = small.getextrema()
+    return hi - lo < 8
 
 def trim_letterbox(im):
     """Remove uniform bands (white letterboxing) left when a 16:9 artboard was

@@ -190,6 +190,24 @@ section.part{padding-block:clamp(40px,6vw,80px);border-bottom:1px solid var(--ru
 .lb .nav button{font-weight:700;font-size:15px}
 .lb .nav button:hover{color:var(--cobalt)}
 
+/* assignment page */
+.assign{padding-block:clamp(40px,7vw,80px) var(--s7);display:grid;gap:var(--s6);max-width:72ch}
+.assign .head-a{display:grid;gap:var(--s3)}
+.assign h1{font-size:clamp(32px,5vw,56px);line-height:1;letter-spacing:-.04em}
+.assign .intro{font-size:20px;font-weight:500;line-height:1.4;color:var(--ink-soft);margin:0}
+.assign section{display:grid;gap:var(--s3)}
+.assign h2{font-size:24px;letter-spacing:-.03em}
+.assign p{margin:0}
+.reading{border:1px solid var(--rule);padding:var(--s4);display:grid;gap:var(--s3)}
+.reading .cite{font-size:17px;line-height:1.5}
+.reading .links{display:flex;flex-wrap:wrap;gap:8px 28px}
+.qs{list-style:none;margin:0;padding:0;display:grid;gap:var(--s3);counter-reset:q}
+.qs li{display:grid;grid-template-columns:3ch 1fr;gap:var(--s3);align-items:baseline}
+.qs li::before{counter-increment:q;content:counter(q,decimal-leading-zero);color:var(--vermilion);font-weight:800;font-size:20px;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.skip{list-style:none;margin:0;padding:0;display:grid;gap:8px;color:var(--ink-soft)}
+.skip li{padding-left:28px;position:relative}
+.skip li::before{content:"";position:absolute;left:0;top:.7em;width:14px;height:1px;background:var(--ink-mute)}
+
 /* passcode gate for student work */
 .gate{padding-block:clamp(64px,12vw,160px) var(--s7);display:grid;gap:var(--s4);max-width:52ch}
 .gate h1{font-size:clamp(32px,5vw,56px);line-height:1;letter-spacing:-.04em}
@@ -313,9 +331,83 @@ window.COURSE = {
   ],
   "brandsIntro": "In Week 3 each student designed a personal brand from the ground up: a brand guide, a business card, and a story told as a social carousel.",
   "workIntro": "Work made in the course by the students, shared with the class of 2026",
+  "assignments": [
+    {
+      "id": "week-5",
+      "week": 5,
+      "title": "Before class: a reading on how infants learn",
+      "linkText": "Reading and questions for this session",
+      "intro": "Dr. Gal Raz has set a reading before his session. Note your answers to the two questions before you read, then answer the three questions after.",
+      "reading": {
+        "citation": "Raz, G. & Saxe, R. (2020). Learning in Infancy Is Active, Endogenously Motivated, and Depends on the Prefrontal Cortices. Annual Review of Developmental Psychology, 2, 247–268.",
+        "file": "assets/readings/raz-saxe-2020-learning-in-infancy.pdf",
+        "doi": "https://doi.org/10.1146/annurev-devpsych-121318-084841"
+      },
+      "skip": [
+        "Information-seeking brain: evidence from adults",
+        "Information-seeking brain: evidence from infants",
+        "The social brain: evidence from adults",
+        "The social brain: evidence from infants"
+      ],
+      "before": [
+        "In their first year of life, would you say humans learn more by A) observing whatever happens to be around them, or B) by actively choosing what to engage with?",
+        "What do humans learn first, A) low-level perceptual concepts like color, shapes and movement or B) high-level concepts like social relationships and physical laws (like gravity, collision etc.)?"
+      ],
+      "after": [
+        "Were you convinced that infants' learning depends on active choice of attentional targets?",
+        "Do you agree with the claim that infants have distinct motivations when deciding what to look at?",
+        "Which evidence did you find most convincing? Which evidence left some open questions for you?"
+      ],
+      "submit": "Submit your answers before class on Wednesday 28 October.",
+      "submitLink": "https://drive.google.com/drive/folders/1vwSQQI1SI62uiYdhUmilDRhcmHS3qxRn?usp=sharing",
+      "submitLinkText": "Upload to the Week 5 Drive folder"
+    }
+  ],
   "passHash": "fc305bc019b687ec3c1f806f3a88222436094a9d8ff2ed202fd7aa437d6022f1"
 };
 window.BRANDS = [
+  {
+    "slug": "dawa-tashi",
+    "name": "Dawa Tashi",
+    "brand": "Dutsi",
+    "tagline": "A hand pouring saffron water into an open palm.",
+    "credit": "Designed by Dawa Tashi",
+    "links": {},
+    "order": 999,
+    "role": "A Bhutanese saffron business",
+    "words": [
+      "100% Natural",
+      "100% Pure",
+      "Uplifting",
+      "Premium-quality",
+      "Trusted"
+    ],
+    "carouselTitle": "",
+    "accent": "#d2a03c",
+    "logo": "assets/dawa-tashi/logo.png",
+    "tileBg": "#d2a03c",
+    "moodboard": [],
+    "kitPages": [],
+    "cover": "assets/dawa-tashi/guide-01.jpg",
+    "guide": [
+      "assets/dawa-tashi/guide-01.jpg",
+      "assets/dawa-tashi/guide-02.jpg",
+      "assets/dawa-tashi/guide-03.jpg",
+      "assets/dawa-tashi/guide-04.jpg",
+      "assets/dawa-tashi/guide-05.jpg",
+      "assets/dawa-tashi/guide-06.jpg",
+      "assets/dawa-tashi/guide-07.jpg",
+      "assets/dawa-tashi/guide-08.jpg",
+      "assets/dawa-tashi/guide-09.jpg",
+      "assets/dawa-tashi/guide-10.jpg",
+      "assets/dawa-tashi/guide-11.jpg"
+    ],
+    "cards": [
+      "assets/dawa-tashi/cards-01.jpg",
+      "assets/dawa-tashi/cards-02.jpg"
+    ],
+    "carousel": []
+  },
   {
     "slug": "kinley-dorji",
     "name": "Kinley Dorji",
@@ -373,6 +465,60 @@ window.BRANDS = [
       "assets/kinley-dorji/carousel-07.jpg",
       "assets/kinley-dorji/carousel-08.jpg"
     ]
+  },
+  {
+    "slug": "kuenga-namgay",
+    "name": "Kuenga Namgay",
+    "brand": "Kuenga Namgay",
+    "tagline": "A live CV and portfolio page, with an AI assistant for everything else.",
+    "credit": "Designed by Kuenga Namgay",
+    "links": {},
+    "order": 999,
+    "role": "Project manager, Dabtong House",
+    "words": [
+      "Minimal",
+      "Striking",
+      "Calm",
+      "Honest",
+      "Rooted"
+    ],
+    "carouselTitle": "",
+    "accent": "#1b1612",
+    "logo": "assets/kuenga-namgay/logo.png",
+    "tileBg": "#1b1612",
+    "moodboard": [],
+    "kitPages": [
+      "assets/kuenga-namgay/kit-01.jpg",
+      "assets/kuenga-namgay/kit-02.jpg",
+      "assets/kuenga-namgay/kit-03.jpg",
+      "assets/kuenga-namgay/kit-04.jpg",
+      "assets/kuenga-namgay/kit-05.jpg",
+      "assets/kuenga-namgay/kit-06.jpg",
+      "assets/kuenga-namgay/kit-07.jpg",
+      "assets/kuenga-namgay/kit-08.jpg",
+      "assets/kuenga-namgay/kit-09.jpg",
+      "assets/kuenga-namgay/kit-10.jpg",
+      "assets/kuenga-namgay/kit-11.jpg",
+      "assets/kuenga-namgay/kit-12.jpg",
+      "assets/kuenga-namgay/kit-13.jpg",
+      "assets/kuenga-namgay/kit-14.jpg"
+    ],
+    "cover": "assets/kuenga-namgay/guide-01.jpg",
+    "guide": [
+      "assets/kuenga-namgay/guide-01.jpg",
+      "assets/kuenga-namgay/guide-02.jpg",
+      "assets/kuenga-namgay/guide-03.jpg",
+      "assets/kuenga-namgay/guide-04.jpg",
+      "assets/kuenga-namgay/guide-05.jpg",
+      "assets/kuenga-namgay/guide-06.jpg",
+      "assets/kuenga-namgay/guide-07.jpg",
+      "assets/kuenga-namgay/guide-08.jpg",
+      "assets/kuenga-namgay/guide-09.jpg",
+      "assets/kuenga-namgay/guide-10.jpg",
+      "assets/kuenga-namgay/guide-11.jpg"
+    ],
+    "cards": [],
+    "carousel": []
   },
   {
     "slug": "kuenzang-namgyel",
@@ -546,6 +692,51 @@ window.BRANDS = [
       "assets/kuenzang-namgyel/carousel-01-07.jpg",
       "assets/kuenzang-namgyel/carousel-01-08.jpg"
     ]
+  },
+  {
+    "slug": "kunzang-p-c",
+    "name": "Kunzang P.C.",
+    "brand": "Kunzang P.C.",
+    "tagline": "Ordinary Bhutan, seen up close.",
+    "credit": "Designed by Kunzang P.C.",
+    "links": {},
+    "order": 999,
+    "role": "Freelance writer and producer, Thimphu",
+    "words": [
+      "Authentic",
+      "Artistic",
+      "Professional",
+      "Timeless",
+      "Intriguing"
+    ],
+    "carouselTitle": "",
+    "accent": "#b5532e",
+    "logo": "assets/kunzang-p-c/logo.png",
+    "tileBg": "#b5532e",
+    "moodboard": [],
+    "kitPages": [
+      "assets/kunzang-p-c/kit-01.jpg",
+      "assets/kunzang-p-c/kit-02.jpg"
+    ],
+    "cover": "assets/kunzang-p-c/guide-01.jpg",
+    "guide": [
+      "assets/kunzang-p-c/guide-01.jpg",
+      "assets/kunzang-p-c/guide-02.jpg",
+      "assets/kunzang-p-c/guide-03.jpg",
+      "assets/kunzang-p-c/guide-04.jpg",
+      "assets/kunzang-p-c/guide-05.jpg",
+      "assets/kunzang-p-c/guide-06.jpg",
+      "assets/kunzang-p-c/guide-07.jpg",
+      "assets/kunzang-p-c/guide-08.jpg",
+      "assets/kunzang-p-c/guide-09.jpg",
+      "assets/kunzang-p-c/guide-10.jpg",
+      "assets/kunzang-p-c/guide-11.jpg"
+    ],
+    "cards": [
+      "assets/kunzang-p-c/cards-01.jpg",
+      "assets/kunzang-p-c/cards-02.jpg"
+    ],
+    "carousel": []
   },
   {
     "slug": "shohei-yoshida",
@@ -732,6 +923,122 @@ window.BRANDS = [
       "assets/shohei-yoshida/carousel-06.jpg",
       "assets/shohei-yoshida/carousel-07.jpg"
     ]
+  },
+  {
+    "slug": "sujal-nepal",
+    "name": "Sujal Nepal",
+    "brand": "MeowKun Studios",
+    "tagline": "A lamp above still water.",
+    "credit": "Designed by Sujal Nepal",
+    "links": {},
+    "order": 999,
+    "role": "Creative studio, Thimphu",
+    "words": [
+      "Quiet",
+      "Thoughtful",
+      "Minimal",
+      "Timeless",
+      "Nature-rooted"
+    ],
+    "carouselTitle": "Where I live",
+    "accent": "#0b0e16",
+    "logo": "assets/sujal-nepal/logo.png",
+    "tileBg": "#0b0e16",
+    "moodboard": [],
+    "kitPages": [
+      "assets/sujal-nepal/kit-01.jpg",
+      "assets/sujal-nepal/kit-02.jpg",
+      "assets/sujal-nepal/kit-03.jpg",
+      "assets/sujal-nepal/kit-04.jpg",
+      "assets/sujal-nepal/kit-05.jpg",
+      "assets/sujal-nepal/kit-06.jpg",
+      "assets/sujal-nepal/kit-07.jpg",
+      "assets/sujal-nepal/kit-08.jpg",
+      "assets/sujal-nepal/kit-09.jpg",
+      "assets/sujal-nepal/kit-10.jpg",
+      "assets/sujal-nepal/kit-11.jpg",
+      "assets/sujal-nepal/kit-12.jpg"
+    ],
+    "cover": "assets/sujal-nepal/guide-01.jpg",
+    "guide": [
+      "assets/sujal-nepal/guide-01.jpg",
+      "assets/sujal-nepal/guide-02.jpg",
+      "assets/sujal-nepal/guide-03.jpg",
+      "assets/sujal-nepal/guide-04.jpg",
+      "assets/sujal-nepal/guide-05.jpg",
+      "assets/sujal-nepal/guide-06.jpg",
+      "assets/sujal-nepal/guide-07.jpg",
+      "assets/sujal-nepal/guide-08.jpg",
+      "assets/sujal-nepal/guide-09.jpg",
+      "assets/sujal-nepal/guide-10.jpg",
+      "assets/sujal-nepal/guide-11.jpg",
+      "assets/sujal-nepal/guide-12.jpg",
+      "assets/sujal-nepal/guide-13.jpg",
+      "assets/sujal-nepal/guide-14.jpg",
+      "assets/sujal-nepal/guide-15.jpg"
+    ],
+    "cards": [
+      "assets/sujal-nepal/cards-01.jpg"
+    ],
+    "carousel": [
+      "assets/sujal-nepal/carousel-01.jpg",
+      "assets/sujal-nepal/carousel-02.jpg",
+      "assets/sujal-nepal/carousel-03.jpg",
+      "assets/sujal-nepal/carousel-04.jpg",
+      "assets/sujal-nepal/carousel-05.jpg",
+      "assets/sujal-nepal/carousel-06.jpg",
+      "assets/sujal-nepal/carousel-07.jpg",
+      "assets/sujal-nepal/carousel-08.jpg"
+    ]
+  },
+  {
+    "slug": "tenzin-jambay-wangchuk",
+    "name": "Tenzin Jambay Wangchuk",
+    "brand": "Chenrezig Creative",
+    "tagline": "Light, caught sideways.",
+    "credit": "Designed by Tenzin Jambay Wangchuk",
+    "links": {},
+    "order": 999,
+    "role": "A creative sandbox: pictures, prose and video",
+    "words": [
+      "Calm",
+      "Anecdotal",
+      "Sun-dappled",
+      "Warm",
+      "Ataraxic"
+    ],
+    "carouselTitle": "",
+    "accent": "#c8102e",
+    "logo": "assets/tenzin-jambay-wangchuk/logo.png",
+    "tileBg": "#c8102e",
+    "moodboard": [],
+    "kitPages": [
+      "assets/tenzin-jambay-wangchuk/kit-01.jpg",
+      "assets/tenzin-jambay-wangchuk/kit-02.jpg",
+      "assets/tenzin-jambay-wangchuk/kit-03.jpg",
+      "assets/tenzin-jambay-wangchuk/kit-04.jpg",
+      "assets/tenzin-jambay-wangchuk/kit-05.jpg",
+      "assets/tenzin-jambay-wangchuk/kit-06.jpg"
+    ],
+    "cover": "assets/tenzin-jambay-wangchuk/guide-01.jpg",
+    "guide": [
+      "assets/tenzin-jambay-wangchuk/guide-01.jpg",
+      "assets/tenzin-jambay-wangchuk/guide-02.jpg",
+      "assets/tenzin-jambay-wangchuk/guide-03.jpg",
+      "assets/tenzin-jambay-wangchuk/guide-04.jpg",
+      "assets/tenzin-jambay-wangchuk/guide-05.jpg",
+      "assets/tenzin-jambay-wangchuk/guide-06.jpg",
+      "assets/tenzin-jambay-wangchuk/guide-07.jpg",
+      "assets/tenzin-jambay-wangchuk/guide-08.jpg",
+      "assets/tenzin-jambay-wangchuk/guide-09.jpg",
+      "assets/tenzin-jambay-wangchuk/guide-10.jpg",
+      "assets/tenzin-jambay-wangchuk/guide-11.jpg"
+    ],
+    "cards": [
+      "assets/tenzin-jambay-wangchuk/cards-01.jpg",
+      "assets/tenzin-jambay-wangchuk/cards-02.jpg"
+    ],
+    "carousel": []
   }
 ];
 </script>
@@ -796,6 +1103,7 @@ function renderHome() {
       <td class="time">${esc(s.time)}</td>
       <td class="topic">${esc(s.topic)}${i === nextIdx ? '<span class="chip">Next</span>' : ""}
         ${s.note ? `<span class="note">${s.noteLink ? `<a class="quiet" style="font-weight:500;text-decoration:underline;text-decoration-color:var(--cobalt);text-underline-offset:3px" href="${esc(s.noteLink)}" target="_blank" rel="noopener">${esc(s.note)} ↗</a>` : esc(s.note)}</span>` : ""}
+        ${(C.assignments || []).filter(a => a.week === s.week).map(a => `<div class="work"><a class="plink sm" href="#${esc(a.id)}"><span>${esc(a.linkText || a.title)}</span>${STROKE.arrow("var(--cobalt)")}</a></div>`).join("")}
       </td></tr>`;
   }).join("");
   const dashes = ["var(--vermilion)", "var(--cobalt)", "var(--butter)"];
@@ -901,6 +1209,40 @@ function renderGate(after) {
     if (h === C.passHash) { remember(); after(); }
     else { err.textContent = "That passcode isn't right. Check the one from class and try again."; input.select(); }
   });
+}
+
+/* ---------- an assignment ---------- */
+function renderAssignment(a) {
+  if (!isUnlocked()) return renderGate(() => renderAssignment(a));
+  document.title = `${a.title} · ${C.title}`;
+  document.documentElement.style.removeProperty("--accent");
+  const wk = (C.schedule || []).find(s => s.week === a.week) || {};
+  const r = a.reading || {};
+  app.innerHTML = `${bar("home")}
+    <main class="wrap">
+      <div class="assign">
+        <div class="head-a">
+          <div class="label">Week <span class="num">${pad(a.week)}</span>${wk.topic ? ` · ${esc(wk.topic)}` : ""}${wk.date ? ` · ${esc(fmtDate(wk.date))}` : ""}</div>
+          <h1>${esc(a.title)}</h1>
+          ${a.intro ? `<p class="intro">${esc(a.intro)}</p>` : ""}
+        </div>
+        ${r.citation ? `<section>
+          <h2>The reading</h2>
+          <div class="reading">
+            <div class="cite">${esc(r.citation)}</div>
+            <div class="links">
+              ${r.file ? `<a class="plink sm" href="${esc(r.file)}" target="_blank" rel="noopener"><span>Open the PDF</span>${STROKE.arrow("var(--cobalt)")}</a>` : ""}
+              ${r.doi ? `<a class="quiet" style="font-size:15px" href="${esc(r.doi)}" target="_blank" rel="noopener">Publisher's page ↗</a>` : ""}
+            </div>
+          </div>
+          ${a.skip && a.skip.length ? `<p class="small">You can skip these sections:</p><ul class="skip">${a.skip.map(x => `<li>${esc(x)}</li>`).join("")}</ul>` : ""}
+        </section>` : ""}
+        ${a.before && a.before.length ? `<section><h2>Before the reading</h2><ol class="qs">${a.before.map(q => `<li>${esc(q)}</li>`).join("")}</ol></section>` : ""}
+        ${a.after && a.after.length ? `<section><h2>After the reading</h2><ol class="qs">${a.after.map(q => `<li>${esc(q)}</li>`).join("")}</ol></section>` : ""}
+        ${a.submit || a.submitLink ? `<section><h2>Submitting</h2>${a.submit ? `<p>${esc(a.submit)}</p>` : ""}${a.submitLink ? `<p><a class="plink" href="${esc(a.submitLink)}" target="_blank" rel="noopener"><span>${esc(a.submitLinkText || "Submit here")}</span>${STROKE.arrow("var(--cobalt)")}</a></p>` : ""}</section>` : ""}
+        <nav class="pn" style="margin-bottom:0"><a href="#"><span class="label">← Back</span><span class="t">Syllabus</span></a></nav>
+      </div>
+    </main>${footer()}`;
 }
 
 /* ---------- student work ---------- */
@@ -1046,7 +1388,9 @@ function openLightbox(b, i) {
 
 function route() {
   const slug = decodeURIComponent(location.hash.replace(/^#/, ""));
+  const a = (C.assignments || []).find(x => x.id === slug);
   if (slug === "work" || slug === "brands") renderWork();
+  else if (a) renderAssignment(a);
   else {
     const idx = BRANDS.findIndex(b => b.slug === slug);
     if (idx >= 0) renderBrand(BRANDS[idx], idx); else renderHome();

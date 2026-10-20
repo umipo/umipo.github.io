@@ -190,6 +190,24 @@ section.part{padding-block:clamp(40px,6vw,80px);border-bottom:1px solid var(--ru
 .lb .nav button{font-weight:700;font-size:15px}
 .lb .nav button:hover{color:var(--cobalt)}
 
+/* assignment page */
+.assign{padding-block:clamp(40px,7vw,80px) var(--s7);display:grid;gap:var(--s6);max-width:72ch}
+.assign .head-a{display:grid;gap:var(--s3)}
+.assign h1{font-size:clamp(32px,5vw,56px);line-height:1;letter-spacing:-.04em}
+.assign .intro{font-size:20px;font-weight:500;line-height:1.4;color:var(--ink-soft);margin:0}
+.assign section{display:grid;gap:var(--s3)}
+.assign h2{font-size:24px;letter-spacing:-.03em}
+.assign p{margin:0}
+.reading{border:1px solid var(--rule);padding:var(--s4);display:grid;gap:var(--s3)}
+.reading .cite{font-size:17px;line-height:1.5}
+.reading .links{display:flex;flex-wrap:wrap;gap:8px 28px}
+.qs{list-style:none;margin:0;padding:0;display:grid;gap:var(--s3);counter-reset:q}
+.qs li{display:grid;grid-template-columns:3ch 1fr;gap:var(--s3);align-items:baseline}
+.qs li::before{counter-increment:q;content:counter(q,decimal-leading-zero);color:var(--vermilion);font-weight:800;font-size:20px;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.skip{list-style:none;margin:0;padding:0;display:grid;gap:8px;color:var(--ink-soft)}
+.skip li{padding-left:28px;position:relative}
+.skip li::before{content:"";position:absolute;left:0;top:.7em;width:14px;height:1px;background:var(--ink-mute)}
+
 /* passcode gate for student work */
 .gate{padding-block:clamp(64px,12vw,160px) var(--s7);display:grid;gap:var(--s4);max-width:52ch}
 .gate h1{font-size:clamp(32px,5vw,56px);line-height:1;letter-spacing:-.04em}
@@ -275,6 +293,7 @@ function renderHome() {
       <td class="time">${esc(s.time)}</td>
       <td class="topic">${esc(s.topic)}${i === nextIdx ? '<span class="chip">Next</span>' : ""}
         ${s.note ? `<span class="note">${s.noteLink ? `<a class="quiet" style="font-weight:500;text-decoration:underline;text-decoration-color:var(--cobalt);text-underline-offset:3px" href="${esc(s.noteLink)}" target="_blank" rel="noopener">${esc(s.note)} ↗</a>` : esc(s.note)}</span>` : ""}
+        ${(C.assignments || []).filter(a => a.week === s.week).map(a => `<div class="work"><a class="plink sm" href="#${esc(a.id)}"><span>${esc(a.linkText || a.title)}</span>${STROKE.arrow("var(--cobalt)")}</a></div>`).join("")}
       </td></tr>`;
   }).join("");
   const dashes = ["var(--vermilion)", "var(--cobalt)", "var(--butter)"];
@@ -380,6 +399,40 @@ function renderGate(after) {
     if (h === C.passHash) { remember(); after(); }
     else { err.textContent = "That passcode isn't right. Check the one from class and try again."; input.select(); }
   });
+}
+
+/* ---------- an assignment ---------- */
+function renderAssignment(a) {
+  if (!isUnlocked()) return renderGate(() => renderAssignment(a));
+  document.title = `${a.title} · ${C.title}`;
+  document.documentElement.style.removeProperty("--accent");
+  const wk = (C.schedule || []).find(s => s.week === a.week) || {};
+  const r = a.reading || {};
+  app.innerHTML = `${bar("home")}
+    <main class="wrap">
+      <div class="assign">
+        <div class="head-a">
+          <div class="label">Week <span class="num">${pad(a.week)}</span>${wk.topic ? ` · ${esc(wk.topic)}` : ""}${wk.date ? ` · ${esc(fmtDate(wk.date))}` : ""}</div>
+          <h1>${esc(a.title)}</h1>
+          ${a.intro ? `<p class="intro">${esc(a.intro)}</p>` : ""}
+        </div>
+        ${r.citation ? `<section>
+          <h2>The reading</h2>
+          <div class="reading">
+            <div class="cite">${esc(r.citation)}</div>
+            <div class="links">
+              ${r.file ? `<a class="plink sm" href="${esc(r.file)}" target="_blank" rel="noopener"><span>Open the PDF</span>${STROKE.arrow("var(--cobalt)")}</a>` : ""}
+              ${r.doi ? `<a class="quiet" style="font-size:15px" href="${esc(r.doi)}" target="_blank" rel="noopener">Publisher's page ↗</a>` : ""}
+            </div>
+          </div>
+          ${a.skip && a.skip.length ? `<p class="small">You can skip these sections:</p><ul class="skip">${a.skip.map(x => `<li>${esc(x)}</li>`).join("")}</ul>` : ""}
+        </section>` : ""}
+        ${a.before && a.before.length ? `<section><h2>Before the reading</h2><ol class="qs">${a.before.map(q => `<li>${esc(q)}</li>`).join("")}</ol></section>` : ""}
+        ${a.after && a.after.length ? `<section><h2>After the reading</h2><ol class="qs">${a.after.map(q => `<li>${esc(q)}</li>`).join("")}</ol></section>` : ""}
+        ${a.submit || a.submitLink ? `<section><h2>Submitting</h2>${a.submit ? `<p>${esc(a.submit)}</p>` : ""}${a.submitLink ? `<p><a class="plink" href="${esc(a.submitLink)}" target="_blank" rel="noopener"><span>${esc(a.submitLinkText || "Submit here")}</span>${STROKE.arrow("var(--cobalt)")}</a></p>` : ""}</section>` : ""}
+        <nav class="pn" style="margin-bottom:0"><a href="#"><span class="label">← Back</span><span class="t">Syllabus</span></a></nav>
+      </div>
+    </main>${footer()}`;
 }
 
 /* ---------- student work ---------- */
@@ -525,7 +578,9 @@ function openLightbox(b, i) {
 
 function route() {
   const slug = decodeURIComponent(location.hash.replace(/^#/, ""));
+  const a = (C.assignments || []).find(x => x.id === slug);
   if (slug === "work" || slug === "brands") renderWork();
+  else if (a) renderAssignment(a);
   else {
     const idx = BRANDS.findIndex(b => b.slug === slug);
     if (idx >= 0) renderBrand(BRANDS[idx], idx); else renderHome();
