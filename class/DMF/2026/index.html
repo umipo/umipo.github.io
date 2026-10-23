@@ -221,6 +221,9 @@ section.part{padding-block:clamp(40px,6vw,80px);border-bottom:1px solid var(--ru
 .bcard dt{font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--vermilion)}
 .bcard dd{margin:2px 0 0;font-size:15px;line-height:1.45}
 .bcard .ask{font-size:15px;font-style:italic;color:var(--ink-soft);border-top:1px solid var(--rule);padding-top:10px}
+.assign figure{margin:0;display:grid;gap:10px}
+.assign figure img{width:100%;height:auto;display:block;border:1px solid var(--rule);background:#fff}
+.assign figcaption{font-size:15px;line-height:1.45;color:var(--ink-soft)}
 
 /* passcode gate for student work */
 .gate{padding-block:clamp(64px,12vw,160px) var(--s7);display:grid;gap:var(--s4);max-width:52ch}
@@ -432,25 +435,34 @@ window.COURSE = {
           "steps": [
             {
               "title": "How your profile looks on the platform",
-              "text": "Profile picture, name, bio, link, and the first three to nine posts. Mock it up, sketch it, or mark up a screenshot of a similar profile."
+              "text": "Name, bio, picture, and what the first posts look like together."
             },
             {
               "title": "Your target audience",
-              "text": "Who exactly, in one sentence, and what they do on this platform. Do some market research: how similar brands promote themselves there, who comments, and what the comments say."
+              "text": "Who you are talking to, and why they are on this platform."
             },
             {
-              "title": "The brand image you want to give",
-              "text": "The hippie fisher who loves to cook, or the grumpy fisher who cannot fish? Three words a stranger should use after ten seconds on your profile, matched to the tone of the platform."
+              "title": "The brand image and your competitive strategy",
+              "text": "What people should feel about the brand, and how it stands apart from everyone else selling the same thing. Look at how similar brands do it."
             },
             {
               "title": "How you will keep the audience engaged",
-              "text": "Not just reach. How will people follow, save, share and reply? Which step of the engagement ladder are you aiming for, what is the weekly rhythm, and how do you reply?"
+              "text": "Not just reach. How do people come back, follow, save and share? The ladder below shows what the feed rewards."
             },
             {
               "title": "Two or three example posts",
-              "text": "Text plus the image or video idea for each, the first thing a stranger does with it, and what you reply."
+              "text": "What they look like, and what you hope people do with them."
             }
           ]
+        },
+        {
+          "heading": "The engagement ladder",
+          "text": "From what is cheap for a stranger to what is expensive, and what the feed rewards. Decide which steps your strategy is aiming for.",
+          "image": {
+            "src": "assets/week-4/engagement-ladder.png",
+            "alt": "The engagement ladder: impression, watch time, like, save, share, comment, reply, follow, message",
+            "caption": "Impression, watch time, like, save, share or send, comment, reply, follow, message. Cheap for the stranger on the left; expensive, and what the feed rewards, on the right."
+          }
         },
         {
           "heading": "Presenting",
@@ -1622,6 +1634,7 @@ function renderAssignment(a) {
           ${sec.steps && sec.steps.length ? `<ol class="qs">${sec.steps.map(s => `<li><div><b>${esc(s.title)}</b>${s.text ? `<span>${esc(s.text)}</span>` : ""}</div></li>`).join("")}</ol>` : ""}
           ${sec.items && sec.items.length ? `<ul class="skip">${sec.items.map(x => `<li>${esc(x)}</li>`).join("")}</ul>` : ""}
           ${sec.brands && sec.brands.length ? `<div class="bcards">${sec.brands.map(b => `<div class="bcard"><div class="em">${esc(b.emoji || "")}</div><h3>${esc(b.name)}</h3>${b.situation ? `<p class="sit">${esc(b.situation)}</p>` : ""}<dl>${(b.facts || []).map(f => `<div><dt>${esc(f[0])}</dt><dd>${esc(f[1])}</dd></div>`).join("")}</dl>${b.ask ? `<p class="ask">${esc(b.ask)}</p>` : ""}</div>`).join("")}</div>` : ""}
+          ${sec.image ? `<figure><img src="${esc(sec.image.src)}" alt="${esc(sec.image.alt || "")}" loading="lazy">${sec.image.caption ? `<figcaption>${esc(sec.image.caption)}</figcaption>` : ""}</figure>` : ""}
           ${sec.link ? `<p><a class="plink sm" href="${esc(sec.link)}" target="_blank" rel="noopener"><span>${esc(sec.linkText || sec.link)}</span>${STROKE.arrow("var(--cobalt)")}</a></p>` : ""}
         </section>`).join("")}
         ${r.citation ? `<section>

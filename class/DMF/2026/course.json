@@ -187,25 +187,34 @@
           "steps": [
             {
               "title": "How your profile looks on the platform",
-              "text": "Profile picture, name, bio, link, and the first three to nine posts. Mock it up, sketch it, or mark up a screenshot of a similar profile."
+              "text": "Name, bio, picture, and what the first posts look like together."
             },
             {
               "title": "Your target audience",
-              "text": "Who exactly, in one sentence, and what they do on this platform. Do some market research: how similar brands promote themselves there, who comments, and what the comments say."
+              "text": "Who you are talking to, and why they are on this platform."
             },
             {
-              "title": "The brand image you want to give",
-              "text": "The hippie fisher who loves to cook, or the grumpy fisher who cannot fish? Three words a stranger should use after ten seconds on your profile, matched to the tone of the platform."
+              "title": "The brand image and your competitive strategy",
+              "text": "What people should feel about the brand, and how it stands apart from everyone else selling the same thing. Look at how similar brands do it."
             },
             {
               "title": "How you will keep the audience engaged",
-              "text": "Not just reach. How will people follow, save, share and reply? Which step of the engagement ladder are you aiming for, what is the weekly rhythm, and how do you reply?"
+              "text": "Not just reach. How do people come back, follow, save and share? The ladder below shows what the feed rewards."
             },
             {
               "title": "Two or three example posts",
-              "text": "Text plus the image or video idea for each, the first thing a stranger does with it, and what you reply."
+              "text": "What they look like, and what you hope people do with them."
             }
           ]
+        },
+        {
+          "heading": "The engagement ladder",
+          "text": "From what is cheap for a stranger to what is expensive, and what the feed rewards. Decide which steps your strategy is aiming for.",
+          "image": {
+            "src": "assets/week-4/engagement-ladder.png",
+            "alt": "The engagement ladder: impression, watch time, like, save, share, comment, reply, follow, message",
+            "caption": "Impression, watch time, like, save, share or send, comment, reply, follow, message. Cheap for the stranger on the left; expensive, and what the feed rewards, on the right."
+          }
         },
         {
           "heading": "Presenting",
