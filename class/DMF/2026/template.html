@@ -208,6 +208,19 @@ section.part{padding-block:clamp(40px,6vw,80px);border-bottom:1px solid var(--ru
 .skip{list-style:none;margin:0;padding:0;display:grid;gap:8px;color:var(--ink-soft)}
 .skip li{padding-left:28px;position:relative}
 .skip li::before{content:"";position:absolute;left:0;top:.7em;width:14px;height:1px;background:var(--ink-mute)}
+.qs b{display:block;font-size:18px;letter-spacing:-.01em;line-height:1.3}
+.qs span{color:var(--ink-soft);display:block;margin-top:4px;line-height:1.45}
+.pills{display:flex;flex-wrap:wrap;gap:8px}
+.pill{border:1px solid var(--rule);padding:6px 12px;border-radius:999px;font-size:15px}
+.bcards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:var(--s3)}
+.bcard{border:1px solid var(--rule);padding:var(--s4);display:grid;gap:12px;align-content:start}
+.bcard .em{font-size:40px;line-height:1}
+.bcard h3{margin:0;font-size:20px;letter-spacing:-.02em;line-height:1.2}
+.bcard .sit{color:var(--ink-soft);font-size:16px;line-height:1.45}
+.bcard dl{margin:0;display:grid;gap:10px}
+.bcard dt{font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--vermilion)}
+.bcard dd{margin:2px 0 0;font-size:15px;line-height:1.45}
+.bcard .ask{font-size:15px;font-style:italic;color:var(--ink-soft);border-top:1px solid var(--rule);padding-top:10px}
 
 /* passcode gate for student work */
 .gate{padding-block:clamp(64px,12vw,160px) var(--s7);display:grid;gap:var(--s4);max-width:52ch}
@@ -417,6 +430,15 @@ function renderAssignment(a) {
           <h1>${esc(a.title)}</h1>
           ${a.intro ? `<p class="intro">${esc(a.intro)}</p>` : ""}
         </div>
+        ${(a.sections || []).map(sec => `<section>
+          ${sec.heading ? `<h2>${esc(sec.heading)}</h2>` : ""}
+          ${sec.text ? `<p>${esc(sec.text)}</p>` : ""}
+          ${sec.pills && sec.pills.length ? `<div class="pills">${sec.pills.map(x => `<span class="pill">${esc(x)}</span>`).join("")}</div>` : ""}
+          ${sec.steps && sec.steps.length ? `<ol class="qs">${sec.steps.map(s => `<li><div><b>${esc(s.title)}</b>${s.text ? `<span>${esc(s.text)}</span>` : ""}</div></li>`).join("")}</ol>` : ""}
+          ${sec.items && sec.items.length ? `<ul class="skip">${sec.items.map(x => `<li>${esc(x)}</li>`).join("")}</ul>` : ""}
+          ${sec.brands && sec.brands.length ? `<div class="bcards">${sec.brands.map(b => `<div class="bcard"><div class="em">${esc(b.emoji || "")}</div><h3>${esc(b.name)}</h3>${b.situation ? `<p class="sit">${esc(b.situation)}</p>` : ""}<dl>${(b.facts || []).map(f => `<div><dt>${esc(f[0])}</dt><dd>${esc(f[1])}</dd></div>`).join("")}</dl>${b.ask ? `<p class="ask">${esc(b.ask)}</p>` : ""}</div>`).join("")}</div>` : ""}
+          ${sec.link ? `<p><a class="plink sm" href="${esc(sec.link)}" target="_blank" rel="noopener"><span>${esc(sec.linkText || sec.link)}</span>${STROKE.arrow("var(--cobalt)")}</a></p>` : ""}
+        </section>`).join("")}
         ${r.citation ? `<section>
           <h2>The reading</h2>
           <div class="reading">

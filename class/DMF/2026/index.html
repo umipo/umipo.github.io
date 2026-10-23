@@ -208,6 +208,19 @@ section.part{padding-block:clamp(40px,6vw,80px);border-bottom:1px solid var(--ru
 .skip{list-style:none;margin:0;padding:0;display:grid;gap:8px;color:var(--ink-soft)}
 .skip li{padding-left:28px;position:relative}
 .skip li::before{content:"";position:absolute;left:0;top:.7em;width:14px;height:1px;background:var(--ink-mute)}
+.qs b{display:block;font-size:18px;letter-spacing:-.01em;line-height:1.3}
+.qs span{color:var(--ink-soft);display:block;margin-top:4px;line-height:1.45}
+.pills{display:flex;flex-wrap:wrap;gap:8px}
+.pill{border:1px solid var(--rule);padding:6px 12px;border-radius:999px;font-size:15px}
+.bcards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:var(--s3)}
+.bcard{border:1px solid var(--rule);padding:var(--s4);display:grid;gap:12px;align-content:start}
+.bcard .em{font-size:40px;line-height:1}
+.bcard h3{margin:0;font-size:20px;letter-spacing:-.02em;line-height:1.2}
+.bcard .sit{color:var(--ink-soft);font-size:16px;line-height:1.45}
+.bcard dl{margin:0;display:grid;gap:10px}
+.bcard dt{font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--vermilion)}
+.bcard dd{margin:2px 0 0;font-size:15px;line-height:1.45}
+.bcard .ask{font-size:15px;font-style:italic;color:var(--ink-soft);border-top:1px solid var(--rule);padding-top:10px}
 
 /* passcode gate for student work */
 .gate{padding-block:clamp(64px,12vw,160px) var(--s7);display:grid;gap:var(--s4);max-width:52ch}
@@ -333,6 +346,138 @@ window.COURSE = {
   "brandsIntro": "In Week 3 each student designed a personal brand from the ground up: a brand guide, a business card, and a story told as a social carousel.",
   "workIntro": "Work made in the course by the students, shared with the class of 2026",
   "assignments": [
+    {
+      "id": "week-4",
+      "week": 4,
+      "title": "Group project: one imaginary brand, one platform",
+      "linkText": "Group project brief and the three brands",
+      "intro": "In the Week 4 breakout each room became a platform and chose one of three imaginary brands. Finish the strategy with your team and present it in class on Wednesday 4 November.",
+      "sections": [
+        {
+          "heading": "The rooms",
+          "text": "Each breakout room is a platform. The platform was assigned; the brand was your choice. Tell us who is in your team and which brand you picked in your platform's thread in the Slack channel #digitalmedia-flourishing-2026.",
+          "pills": [
+            "Instagram",
+            "Threads or X",
+            "TikTok",
+            "LinkedIn"
+          ]
+        },
+        {
+          "heading": "The three brands",
+          "text": "The briefs are vague on purpose so that you can be creative. The toilet paper can be fancy or cheap and funny; the fisher can be rude or charming. The audience does not have to be in Bhutan or Japan: choose the audience, research what they like, and build the strategy from that.",
+          "brands": [
+            {
+              "emoji": "🎣",
+              "name": "Brand A · Individual · The Fisher",
+              "situation": "A young person who left the city to become a fisher in the countryside, with no money, trying to make a living as a content creator.",
+              "facts": [
+                [
+                  "Who",
+                  "One person, one small boat, very early starts, fish to catch every day, and knows how to cook."
+                ],
+                [
+                  "Goal",
+                  "Become a monetisable influencer: an income from content within a year."
+                ],
+                [
+                  "Audience",
+                  "Up to you. City people who dream of leaving? People who cook fish and have no idea where it comes from?"
+                ],
+                [
+                  "Never",
+                  "Sell the dream as easy. Hide the money side."
+                ]
+              ],
+              "ask": "What does your audience get from this account that no travel show gives them?"
+            },
+            {
+              "emoji": "🗣️",
+              "name": "Brand B · Team · AI Translation Tool",
+              "situation": "A software company whose tool gives real-time translation between English, Japanese and Dzongkha. You are the marketer.",
+              "facts": [
+                [
+                  "Who",
+                  "A team of three. The app is in free beta and nobody knows it yet."
+                ],
+                [
+                  "Goal",
+                  "Users first, then the first paying customers: schools, tour guides, hospitals, families."
+                ],
+                [
+                  "Audience",
+                  "Up to you. Exchange students, tour guides, nurses, a family with one grandparent who speaks one language?"
+                ],
+                [
+                  "Never",
+                  "Look like every AI brand: purple, sparkles, robots. Promise a perfect translation."
+                ]
+              ],
+              "ask": "Which conversation, if people watched it happen live, would make them download it?"
+            },
+            {
+              "emoji": "🧻",
+              "name": "Brand C · Small brand · Toilet Paper",
+              "situation": "A second-generation family mill with a small staff, making unbleached, slightly organic toilet paper. Nobody knows it, and the market is a red ocean.",
+              "facts": [
+                [
+                  "Who",
+                  "A normal toilet paper from a family mill. Small team, a factory floor, maybe a van."
+                ],
+                [
+                  "Goal",
+                  "Get known and increase revenue as soon as possible."
+                ],
+                [
+                  "Audience",
+                  "Up to you. Flat-sharers who already buy better things for the kitchen? Cafés and offices that buy in bulk?"
+                ],
+                [
+                  "Never",
+                  "Toilet humour that embarrasses the customer. \"Sustainable\" as a slogan: show it instead."
+                ]
+              ],
+              "ask": "How do you get someone to share a post about toilet paper without feeling silly?"
+            }
+          ]
+        },
+        {
+          "heading": "What your strategy needs",
+          "text": "Build it together in a shared doc. Five parts:",
+          "steps": [
+            {
+              "title": "How your profile looks on the platform",
+              "text": "Profile picture, name, bio, link, and the first three to nine posts. Mock it up, sketch it, or mark up a screenshot of a similar profile."
+            },
+            {
+              "title": "Your target audience",
+              "text": "Who exactly, in one sentence, and what they do on this platform. Do some market research: how similar brands promote themselves there, who comments, and what the comments say."
+            },
+            {
+              "title": "The brand image you want to give",
+              "text": "The hippie fisher who loves to cook, or the grumpy fisher who cannot fish? Three words a stranger should use after ten seconds on your profile, matched to the tone of the platform."
+            },
+            {
+              "title": "How you will keep the audience engaged",
+              "text": "Not just reach. How will people follow, save, share and reply? Which step of the engagement ladder are you aiming for, what is the weekly rhythm, and how do you reply?"
+            },
+            {
+              "title": "Two or three example posts",
+              "text": "Text plus the image or video idea for each, the first thing a stranger does with it, and what you reply."
+            }
+          ]
+        },
+        {
+          "heading": "Presenting",
+          "text": "Each team presents its strategy in class on Wednesday 4 November (Week 6). Any format works: slides, a mock profile, or the posts themselves. Week 5 on 28 October is Dr. Gal Raz's session on attention, so you have two weeks.",
+          "items": [
+            "Post your team members, your brand and the link to your shared doc in your platform's Slack thread.",
+            "Work in the thread so the other rooms can see your thinking."
+          ]
+        }
+      ],
+      "submit": "Presentation in class on Wednesday 4 November. Before then, post your team, brand and shared doc link in your platform's thread in Slack."
+    },
     {
       "id": "week-5",
       "week": 5,
@@ -1483,6 +1628,15 @@ function renderAssignment(a) {
           <h1>${esc(a.title)}</h1>
           ${a.intro ? `<p class="intro">${esc(a.intro)}</p>` : ""}
         </div>
+        ${(a.sections || []).map(sec => `<section>
+          ${sec.heading ? `<h2>${esc(sec.heading)}</h2>` : ""}
+          ${sec.text ? `<p>${esc(sec.text)}</p>` : ""}
+          ${sec.pills && sec.pills.length ? `<div class="pills">${sec.pills.map(x => `<span class="pill">${esc(x)}</span>`).join("")}</div>` : ""}
+          ${sec.steps && sec.steps.length ? `<ol class="qs">${sec.steps.map(s => `<li><div><b>${esc(s.title)}</b>${s.text ? `<span>${esc(s.text)}</span>` : ""}</div></li>`).join("")}</ol>` : ""}
+          ${sec.items && sec.items.length ? `<ul class="skip">${sec.items.map(x => `<li>${esc(x)}</li>`).join("")}</ul>` : ""}
+          ${sec.brands && sec.brands.length ? `<div class="bcards">${sec.brands.map(b => `<div class="bcard"><div class="em">${esc(b.emoji || "")}</div><h3>${esc(b.name)}</h3>${b.situation ? `<p class="sit">${esc(b.situation)}</p>` : ""}<dl>${(b.facts || []).map(f => `<div><dt>${esc(f[0])}</dt><dd>${esc(f[1])}</dd></div>`).join("")}</dl>${b.ask ? `<p class="ask">${esc(b.ask)}</p>` : ""}</div>`).join("")}</div>` : ""}
+          ${sec.link ? `<p><a class="plink sm" href="${esc(sec.link)}" target="_blank" rel="noopener"><span>${esc(sec.linkText || sec.link)}</span>${STROKE.arrow("var(--cobalt)")}</a></p>` : ""}
+        </section>`).join("")}
         ${r.citation ? `<section>
           <h2>The reading</h2>
           <div class="reading">
