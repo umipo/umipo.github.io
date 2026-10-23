@@ -212,11 +212,13 @@
           "text": "Each team presents its strategy in class on Wednesday 4 November (Week 6). Any format works: slides, a mock profile, or the posts themselves.",
           "items": [
             "Post your team members, your brand and the link to your shared doc in your platform's Slack thread.",
-            "Work in the thread so the other rooms can see your thinking."
+            "Upload the final strategy to the Week 4 Drive folder (link below) before class on 4 November."
           ]
         }
       ],
-      "submit": "Presentation in class on Wednesday 4 November. Before then, post your team, brand and shared doc link in your platform's thread in Slack."
+      "submit": "Upload your team's strategy (the shared doc or slides, with the profile mock-up and the example posts) to the Week 4 Drive folder before class on Wednesday 4 November. Post your team, brand and doc link in your platform's Slack thread as soon as you have them.",
+      "submitLink": "https://drive.google.com/drive/folders/12DaiG4It8163O1bYlNph8y_qeeoe10dw?usp=sharing",
+      "submitLinkText": "Upload to the Week 4 Drive folder"
     },
     {
       "id": "week-5",
