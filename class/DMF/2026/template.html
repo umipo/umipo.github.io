@@ -224,6 +224,22 @@ section.part{padding-block:clamp(40px,6vw,80px);border-bottom:1px solid var(--ru
 .assign figure{margin:0;display:grid;gap:10px}
 .assign figure img{width:100%;height:auto;display:block;border:1px solid var(--rule);background:#fff}
 .assign figcaption{font-size:15px;line-height:1.45;color:var(--ink-soft)}
+/* long guides: sub-headings, inline code and links, run-on steps, sub-points, checklists, tables */
+.assign h3{font-size:19px;letter-spacing:-.02em;margin:var(--s3) 0 0}
+.assign code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.88em;background:#fff;border:1px solid var(--rule);padding:1px 5px;border-radius:4px;white-space:nowrap}
+.assign p a,.assign li a,.gtable a{color:var(--cobalt);text-underline-offset:3px}
+.qs .lead{color:var(--ink);margin-top:0}
+.qs .lead b,.qs .sub b,.blist b,.check b{display:inline;font-size:inherit;letter-spacing:inherit;line-height:inherit;color:var(--ink)}
+.skip.sub{margin-top:10px;font-size:16px}
+.qs .sub li{display:block;padding-left:28px}
+.qs .sub li::before{content:"";counter-increment:none;position:absolute;left:0;top:.7em;width:14px;height:1px;background:var(--ink-mute)}
+.check{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.check li{padding-left:32px;position:relative;color:var(--ink-soft)}
+.check li::before{content:"";position:absolute;left:0;top:.25em;width:16px;height:16px;border:1.5px solid var(--ink);border-radius:3px}
+.gtable{border-collapse:collapse;width:100%;font-size:15px;line-height:1.45}
+.gtable th{text-align:left;padding:0 12px 10px 0;border-bottom:1px solid var(--ink);font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-mute)}
+.gtable td{padding:12px 12px 12px 0;border-bottom:1px solid var(--rule);vertical-align:top}
+.gtable td:first-child{font-weight:700}
 
 /* passcode gate for student work */
 .gate{padding-block:clamp(64px,12vw,160px) var(--s7);display:grid;gap:var(--s4);max-width:52ch}
@@ -255,6 +271,11 @@ const C = window.COURSE || {};
 const BRANDS = window.BRANDS || [];
 const app = document.getElementById("app");
 const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+// escaped text plus a little inline markup: `code`, **bold**, [text](https://link)
+const md = s => esc(s)
+  .replace(/`([^`]+)`/g, "<code>$1</code>")
+  .replace(/\*\*(.+?)\*\*/g, "<b>$1</b>")
+  .replace(/\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
 const pad = n => String(n).padStart(2, "0");
 /* painted strokes, in the spirit of the DAUM arrow set (slight wobble, round caps) */
 const STROKE = {
@@ -419,6 +440,16 @@ function renderGate(after) {
 }
 
 /* ---------- an assignment ---------- */
+// one piece of a long section, in reading order: paragraph, sub-heading, steps, bullets, checklist or table
+function renderBlock(b) {
+  if (b.p) return `<p>${md(b.p)}</p>`;
+  if (b.h3) return `<h3>${md(b.h3)}</h3>`;
+  if (b.steps) return `<ol class="qs">${b.steps.map(s => `<li><div>${s.title ? `<b>${md(s.title)}</b>` : ""}${s.text ? `<span${s.title ? "" : ` class="lead"`}>${md(s.text)}</span>` : ""}${s.sub && s.sub.length ? `<ul class="skip sub">${s.sub.map(x => `<li>${md(x)}</li>`).join("")}</ul>` : ""}</div></li>`).join("")}</ol>`;
+  if (b.list) return `<ul class="skip blist">${b.list.map(x => `<li>${x.title ? `<b>${md(x.title)}</b> ` : ""}${md(x.text)}${x.sub && x.sub.length ? `<ul class="skip sub">${x.sub.map(y => `<li>${md(y)}</li>`).join("")}</ul>` : ""}</li>`).join("")}</ul>`;
+  if (b.check) return `<ul class="check">${b.check.map(x => `<li>${x.title ? `<b>${md(x.title)}</b> ` : ""}${md(x.text)}</li>`).join("")}</ul>`;
+  if (b.table) return `<div style="overflow-x:auto"><table class="gtable">${b.table.head && b.table.head.length ? `<thead><tr>${b.table.head.map(h => `<th>${md(h)}</th>`).join("")}</tr></thead>` : ""}<tbody>${b.table.rows.map(r => `<tr>${r.map(c => `<td>${md(c)}</td>`).join("")}</tr>`).join("")}</tbody></table></div>`;
+  return "";
+}
 function renderAssignment(a) {
   if (!isUnlocked()) return renderGate(() => renderAssignment(a));
   document.title = `${a.title} · ${C.title}`;
@@ -442,6 +473,7 @@ function renderAssignment(a) {
           ${sec.brands && sec.brands.length ? `<div class="bcards">${sec.brands.map(b => `<div class="bcard"><div class="em">${esc(b.emoji || "")}</div><h3>${esc(b.name)}</h3>${b.situation ? `<p class="sit">${esc(b.situation)}</p>` : ""}<dl>${(b.facts || []).map(f => `<div><dt>${esc(f[0])}</dt><dd>${esc(f[1])}</dd></div>`).join("")}</dl>${b.ask ? `<p class="ask">${esc(b.ask)}</p>` : ""}</div>`).join("")}</div>` : ""}
           ${sec.image ? `<figure><img src="${esc(sec.image.src)}" alt="${esc(sec.image.alt || "")}" loading="lazy">${sec.image.caption ? `<figcaption>${esc(sec.image.caption)}</figcaption>` : ""}</figure>` : ""}
           ${sec.link ? `<p><a class="plink sm" href="${esc(sec.link)}" target="_blank" rel="noopener"><span>${esc(sec.linkText || sec.link)}</span>${STROKE.arrow("var(--cobalt)")}</a></p>` : ""}
+          ${(sec.blocks || []).map(renderBlock).join("")}
         </section>`).join("")}
         ${r.citation ? `<section>
           <h2>The reading</h2>

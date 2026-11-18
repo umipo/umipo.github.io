@@ -259,6 +259,716 @@
       "submitLinkText": "Upload to the Week 5 Drive folder"
     },
     {
+      "id": "week-8",
+      "week": 8,
+      "title": "Premiere Pro guide: edit your Short",
+      "linkText": "Premiere Pro guide: edit your Short",
+      "intro": "Step by step, from importing your clips to exporting a vertical Short of your morning. The Adobe and Artlist logins are shared in class, not on this page.",
+      "sections": [
+        {
+          "heading": "Today: your Short",
+          "blocks": [
+            {
+              "p": "By the end of class you export one vertical video of your morning, between 45 seconds and 1 minute 10 seconds long. It must include at least two sound effects and one piece of background music. Do the steps below in order and skip anything marked optional if you run out of time."
+            },
+            {
+              "p": "Text and color are extras at the end of this guide, for anyone who is ahead or for after class."
+            }
+          ]
+        },
+        {
+          "heading": "Before you start",
+          "blocks": [
+            {
+              "p": "Have these five things ready before class begins."
+            },
+            {
+              "check": [
+                {
+                  "title": "Premiere installed and opened once.",
+                  "text": "Sign in with the Adobe account you were given. SDS students get Adobe Creative Cloud from the IT portal. Bhutan students share one account between two people."
+                },
+                {
+                  "title": "Your footage.",
+                  "text": "5 to 10 minutes of vertical clips of your morning."
+                },
+                {
+                  "title": "Headphones.",
+                  "text": "You cannot judge sound on laptop speakers."
+                },
+                {
+                  "title": "Free space on your laptop.",
+                  "text": "At least 5 GB."
+                }
+              ]
+            },
+            {
+              "p": "Shortcuts are written for Mac. On Windows, use Ctrl for Cmd and Alt for Option, unless a step gives a separate Windows key."
+            }
+          ]
+        },
+        {
+          "heading": "Step 1: Put everything in one folder and import",
+          "blocks": [
+            {
+              "p": "Premiere does not copy your clips into the project. It only remembers where they sit, so put them in their final place first."
+            },
+            {
+              "steps": [
+                {
+                  "title": "Make one folder.",
+                  "text": "On your Desktop, create a folder called ex. `MyMorning_YourName`. Inside it, create three folders: `Footage`, `Audio` and `Exports`."
+                },
+                {
+                  "title": "Copy your clips from your phone into `Footage`.",
+                  "text": ""
+                },
+                {
+                  "title": "Copy your room sound into `Audio`.",
+                  "text": ""
+                },
+                {
+                  "title": "Stop moving files.",
+                  "text": "From now on, do not rename or move anything in this folder. If you do, Premiere loses the clip and shows “Media Offline”."
+                },
+                {
+                  "title": "",
+                  "text": "**Open Premiere and click New Project** on the Home screen. You are now in Import mode."
+                },
+                {
+                  "title": "Name the project.",
+                  "text": "At the top left, type `MyMorning_YourName` in Project name. In Project location, choose the folder you made in step 1."
+                },
+                {
+                  "title": "Select your media.",
+                  "text": "In the middle of the screen, browse to your `Footage` folder and click each clip so it gets a tick. Then open `Audio` and tick your room sound."
+                },
+                {
+                  "title": "Turn off Create new sequence.",
+                  "text": "It is in the Import settings on the right. You will make the sequence by hand in Step 3. Leave Copy media off as well."
+                },
+                {
+                  "title": "",
+                  "text": "**Click Create** at the bottom right. Premiere switches to Edit mode and your clips appear in the Project panel, bottom left."
+                },
+                {
+                  "title": "",
+                  "text": "**Save** with Cmd+S. Do this every few minutes for the rest of the class."
+                }
+              ]
+            },
+            {
+              "p": "To add more files later, press Cmd+I or drag them into the Project panel."
+            }
+          ]
+        },
+        {
+          "heading": "Step 2: Look around the Premiere screen",
+          "blocks": [
+            {
+              "p": "After you click Create in Step 1, you are looking at this screen. Take two minutes to find each panel before you touch anything."
+            },
+            {
+              "p": "The screen is a set of panels, and five of them do nearly all the work. The header bar at the top switches between three modes: Import, Edit and Export. You will spend most of your time in Edit."
+            },
+            {
+              "table": {
+                "head": [
+                  "Panel",
+                  "Where it sits",
+                  "What it is for"
+                ],
+                "rows": [
+                  [
+                    "Project",
+                    "Bottom left",
+                    "Holds everything you imported: clips, music, images, sequences"
+                  ],
+                  [
+                    "Source Monitor",
+                    "Top left",
+                    "Previews a single clip so you can pick the part you want"
+                  ],
+                  [
+                    "Timeline",
+                    "Bottom right",
+                    "Where you arrange clips in order; video tracks on top, audio below"
+                  ],
+                  [
+                    "Program Monitor",
+                    "Top right",
+                    "Plays back the edit you are building on the timeline"
+                  ],
+                  [
+                    "Tools",
+                    "Left edge of the timeline",
+                    "Selection, Razor, Type and the other cursors"
+                  ],
+                  [
+                    "Properties",
+                    "Right side",
+                    "Settings for whatever is selected: size, position, text, volume"
+                  ]
+                ]
+              }
+            },
+            {
+              "p": "If a panel disappears, open it again from the Window menu. To put everything back, choose Window > Workspaces > Reset to Saved Layout. Press the backtick key (`) with the mouse over any panel to make it full screen, and again to shrink it."
+            }
+          ]
+        },
+        {
+          "heading": "Step 3: Create the sequence for a Short",
+          "blocks": [
+            {
+              "p": "A sequence is one timeline. Today you set it up by hand so it is vertical, 30 frames per second, and in normal color."
+            },
+            {
+              "steps": [
+                {
+                  "title": "",
+                  "text": "**Choose File > New > Sequence**, or press Cmd+N."
+                },
+                {
+                  "title": "",
+                  "text": "**Click the Settings tab** at the top of the New Sequence window."
+                },
+                {
+                  "title": "Editing Mode:",
+                  "text": "choose Custom."
+                },
+                {
+                  "title": "Timebase:",
+                  "text": "choose “Social Media Portrait 9x16 30fps”",
+                  "sub": [
+                    "30.00 frames/second.",
+                    "Frame size: type 1080 for horizontal and 1920 for vertical.",
+                    "**Pixel Aspect Ratio:** Square Pixels (1.0).",
+                    "**Fields:** No Fields (Progressive Scan).",
+                    "**Working Color Space:** Rec. 709. This stops iPhone HDR clips from looking too bright or grey."
+                  ]
+                },
+                {
+                  "title": "Sequence Name:",
+                  "text": "type ex.`My Morning` at the bottom and click OK. An empty timeline opens, and the Program Monitor at the top right shows a tall black frame."
+                },
+                {
+                  "title": "Test with one clip.",
+                  "text": "Drag any clip from the Project panel onto track V1 of the timeline. If a Clip Mismatch Warning appears, choose Keep existing settings (IMPORTANT!)."
+                },
+                {
+                  "title": "Look at the picture in the Program Monitor.",
+                  "text": "Fix it now if something is wrong:",
+                  "sub": [
+                    "**The clip looks zoomed in.** It was filmed in 4K. Right-click the clip on the timeline and choose Set to Frame Size.",
+                    "**The clip is landscape with black bars.** Select it, open the Properties panel on the right, and raise Scale until it fills the frame. Then change Position to choose which part you see.",
+                    "**The clip looks too bright or washed out.** It is HDR. In the Project panel, select all clips with Cmd+A, right-click, and choose Modify > Interpret Footage. Under Color Management, set the color space override to Rec. 709 and click OK. If you cannot find this setting, call Daum before you go on."
+                  ]
+                },
+                {
+                  "title": "",
+                  "text": "**Delete the test clip** from the timeline and save."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "Step 4: Edit your Short",
+          "blocks": [
+            {
+              "p": "Your Short should be between 45 seconds and 1 minute 10 seconds."
+            },
+            {
+              "list": [
+                {
+                  "title": "Why not shorter.",
+                  "text": "Under 45 seconds there is not enough room for a beginning, a middle and an end."
+                },
+                {
+                  "title": "Why not longer.",
+                  "text": "YouTube Shorts and Instagram Reels allow up to 3 minutes, but people swipe away fast. Platforms show a video to more people when viewers watch it to the end."
+                },
+                {
+                  "title": "The first second.",
+                  "text": "Put your strongest image first. Do not start with a title or a slow shot."
+                },
+                {
+                  "title": "Vertical and full screen.",
+                  "text": "Keep anything important away from the very top and bottom, where the app puts its own buttons and text."
+                }
+              ]
+            },
+            {
+              "p": "You edit in two passes. First a rough cut, then you tighten it."
+            },
+            {
+              "h3": "Rough cut"
+            },
+            {
+              "p": "Get your best shots onto the timeline in order. Aim for about 90-120 seconds and do not polish anything yet."
+            },
+            {
+              "steps": [
+                {
+                  "title": "Open a clip.",
+                  "text": "Double-click it in the Project panel. It appears in the Source Monitor, top left."
+                },
+                {
+                  "title": "Watch it.",
+                  "text": "Press Space to play and pause. L plays forward, J plays backward, K stops. Tap L twice to go faster."
+                },
+                {
+                  "title": "Mark the good part.",
+                  "text": "Press I where the useful part starts and O where it ends. Keep each piece short, about 2 to 5 seconds."
+                },
+                {
+                  "title": "Add it to the timeline.",
+                  "text": "Drag the picture from the Source Monitor onto track V1, right after the previous clip. It snaps into place. The comma key (,) does the same at the playhead."
+                },
+                {
+                  "title": "Repeat for every shot you want.",
+                  "text": "Use the same action in different sizes: wide, then medium, then close-up."
+                },
+                {
+                  "title": "Choose your first shot.",
+                  "text": "Put your strongest image first. A viewer decides in the first second whether to keep watching."
+                },
+                {
+                  "title": "Play the whole thing.",
+                  "text": "Click at the start of the timeline and press Space."
+                },
+                {
+                  "title": "Check the length.",
+                  "text": "The timecode at the bottom right of the Program Monitor shows the total. Stop adding clips at about 90 seconds."
+                },
+                {
+                  "title": "Save.",
+                  "text": ""
+                }
+              ]
+            },
+            {
+              "p": "Two things confuse most beginners. The blue buttons at the left of each track (V1, A1) decide where new clips land, so keep V1 and A1 blue. The magnet icon (snapping, S) makes clips click together edge to edge, so leave it on."
+            },
+            {
+              "h3": "Tighten it"
+            },
+            {
+              "p": "Now remove everything the video does not need. Most of the work is making each clip shorter."
+            },
+            {
+              "steps": [
+                {
+                  "title": "Trim an edge.",
+                  "text": "With the Selection tool (V), move the mouse to the edge of a clip until a red bracket appears, then drag."
+                },
+                {
+                  "title": "Trim faster with Q and W.",
+                  "text": "Put the playhead where the clip should start and press Q. Put it where the clip should end and press W. Premiere closes the gap for you."
+                },
+                {
+                  "title": "Cut out the middle of a clip.",
+                  "text": "Put the playhead at the start of the bad part and press Cmd+K. Do the same at its end. Click the bad piece and press Option+Delete. On Windows, press Shift+Delete. The clips after it slide left."
+                },
+                {
+                  "title": "Close a gap.",
+                  "text": "Click the empty space between two clips and press Delete."
+                },
+                {
+                  "title": "Change the order.",
+                  "text": "Hold Cmd+Option and drag a clip between two others. On Windows, hold Ctrl+Alt. The clip moves and nothing is overwritten."
+                },
+                {
+                  "title": "Build a rhythm.",
+                  "text": "Try several very short clips of half a second to one second, then one long shot of 4 to 5 seconds. The contrast is what makes it feel edited."
+                },
+                {
+                  "title": "Check the length again.",
+                  "text": "Stop when the total is between 45 seconds and 1 minute 10 seconds."
+                },
+                {
+                  "title": "Save.",
+                  "text": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "Step 5: Add sound, with Artlist",
+          "blocks": [
+            {
+              "p": "Viewers forgive rough pictures sooner than rough sound. Put your headphones on now and keep them on until you export."
+            },
+            {
+              "h3": "Get your sounds from Artlist"
+            },
+            {
+              "steps": [
+                {
+                  "title": "",
+                  "text": "**Go to artlist.io** and click Sign in."
+                },
+                {
+                  "title": "Sign in with the class account.",
+                  "text": "Daum gives you the email and password in class. Please do not change the password or any account setting."
+                },
+                {
+                  "title": "Find your music.",
+                  "text": "Click Music. Type the one word for your morning in the search bar, for example cozy, calm or funny. You can also filter by mood, genre and instrument. Choose a track without vocals."
+                },
+                {
+                  "title": "Listen before you download.",
+                  "text": "Press play and imagine your first ten seconds. Does it fit?"
+                },
+                {
+                  "title": "Download it.",
+                  "text": "Click the download arrow next to the track. Choose WAV, or MP3 if your internet is slow."
+                },
+                {
+                  "title": "Find two sound effects.",
+                  "text": "Click SFX and search for what you need: whoosh, pop, door, alarm, footsteps. Download each one."
+                },
+                {
+                  "title": "Move the files into your `Audio` folder.",
+                  "text": "They arrive in your Downloads folder. Move them now, before you import them."
+                },
+                {
+                  "title": "Import them.",
+                  "text": "In Premiere press Cmd+I, select the new files in your `Audio` folder, and click Import."
+                }
+              ]
+            },
+            {
+              "p": "Artlist is a paid licence, so you do not need to credit its music. If you use a sound from Freesound or another Creative Commons site, write the title, author, source and licence in your caption."
+            }
+          ]
+        },
+        {
+          "heading": "Step 6: Export",
+          "blocks": [
+            {
+              "p": "Export one H.264 .mp4 file at 1080×1920. Start this step by 2 hours 30 minutes into class."
+            },
+            {
+              "steps": [
+                {
+                  "title": "",
+                  "text": "**Click anywhere on the timeline** so the panel has a blue outline. Premiere exports whichever panel is active."
+                },
+                {
+                  "title": "Open Export.",
+                  "text": "Press Cmd+M, or click Export in the header bar at the top."
+                },
+                {
+                  "title": "File name:",
+                  "text": "type `MyMorning_YourName`."
+                },
+                {
+                  "title": "Location:",
+                  "text": "click it and choose your `Exports` folder."
+                },
+                {
+                  "title": "Preset:",
+                  "text": "choose Match Source – Adaptive High Bitrate. Format should read H.264."
+                },
+                {
+                  "title": "Check the Video section.",
+                  "text": "Frame size must read 1080×1920 and frame rate 30. If it shows 1920×1080, your sequence is not vertical, so go back to Step 3."
+                },
+                {
+                  "title": "Check the Range.",
+                  "text": "It should say Entire Source. The preview on the right should show your whole video, between 45 seconds and 1 minute 10."
+                },
+                {
+                  "title": "",
+                  "text": "**Click Export** at the bottom right and wait for the bar to finish."
+                },
+                {
+                  "title": "Watch the file.",
+                  "text": "Open the .mp4 from your `Exports` folder and watch it from start to end, with sound. Send it to your phone and watch it there too."
+                },
+                {
+                  "title": "",
+                  "text": "Drop your final file [📁 here.](https://drive.google.com/drive/folders/1DNiMXkCvhHSnok7IKS02oMi1hj9p-E9e?usp=sharing)"
+                }
+              ]
+            },
+            {
+              "p": "For other kinds of video later, use these settings."
+            },
+            {
+              "table": {
+                "head": [
+                  "Destination",
+                  "Frame size",
+                  "Format and preset"
+                ],
+                "rows": [
+                  [
+                    "YouTube, Vimeo, websites",
+                    "1920×1080 or 3840×2160",
+                    "H.264, Match Source – Adaptive High Bitrate"
+                  ],
+                  [
+                    "Instagram Reels, TikTok, Shorts",
+                    "1080×1920 (vertical)",
+                    "H.264, Match Source – Adaptive High Bitrate"
+                  ],
+                  [
+                    "Slides or email",
+                    "1920×1080",
+                    "H.264, Match Source – Adaptive Medium Bitrate"
+                  ],
+                  [
+                    "Hand-off to another editor or broadcaster",
+                    "Same as the sequence",
+                    "Apple ProRes 422, QuickTime"
+                  ]
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "heading": "Extra: text and transitions (optional)",
+          "blocks": [
+            {
+              "p": "Only do this step if your cut and your sound are finished. One line of text is enough for a short video."
+            },
+            {
+              "steps": [
+                {
+                  "title": "Go to the place where the text should appear.",
+                  "text": "Move the playhead there."
+                },
+                {
+                  "title": "",
+                  "text": "**Pick the Type tool** by pressing T. Click on the picture in the Program Monitor and type."
+                },
+                {
+                  "title": "",
+                  "text": "**Switch back to the Selection tool** by pressing V. Otherwise every click makes a new text box."
+                },
+                {
+                  "title": "Style it.",
+                  "text": "With the text selected, use the Properties panel on the right to change font, size and color. Use the align buttons there to center it."
+                },
+                {
+                  "title": "Keep it in the middle of the frame.",
+                  "text": "The top and bottom of a vertical video are covered by the app’s own buttons and captions."
+                },
+                {
+                  "title": "Set how long it stays.",
+                  "text": "The text is its own clip on track V2. Drag its edges on the timeline."
+                },
+                {
+                  "title": "Captions, only if you speak in the video.",
+                  "text": "Open Window > Text, go to the Transcript tab and transcribe the sequence. Then click Create Captions and read them through once."
+                },
+                {
+                  "title": "Transitions.",
+                  "text": "A plain cut is right most of the time. For a soft change, click a cut and press Cmd+D to add a cross dissolve."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "Extra: color (optional)",
+          "blocks": [
+            {
+              "p": "Basic correction means making each shot look natural and making the shots match each other."
+            },
+            {
+              "steps": [
+                {
+                  "title": "Open the panel.",
+                  "text": "Choose Window > Lumetri Color and stay in the Basic Correction section."
+                },
+                {
+                  "title": "",
+                  "text": "**Select one clip** on the timeline."
+                },
+                {
+                  "title": "Try Auto first.",
+                  "text": "Click the Auto button. If it looks worse, press Cmd+Z."
+                },
+                {
+                  "title": "White balance.",
+                  "text": "Click the eyedropper on something that should be white or grey, or move Temperature until skin looks right."
+                },
+                {
+                  "title": "Exposure and contrast.",
+                  "text": "Brighten or darken with Exposure, then add a little Contrast."
+                },
+                {
+                  "title": "Highlights and shadows.",
+                  "text": "Pull Highlights down if a window is blown out. Lift Shadows if a face is too dark."
+                },
+                {
+                  "title": "Saturation.",
+                  "text": "Small moves only. Around 100 to 115 is usually enough."
+                },
+                {
+                  "title": "Make it feel like morning.",
+                  "text": "Move Temperature a little toward orange and raise Exposure slightly. This helps if you filmed later in the day."
+                },
+                {
+                  "title": "Repeat for the clips that look different from the rest.",
+                  "text": ""
+                }
+              ]
+            },
+            {
+              "p": "To give the whole video one look, choose New Item > Adjustment Layer in the Project panel, lay it on a track above your clips, and apply Lumetri to that layer instead of to each clip."
+            }
+          ]
+        },
+        {
+          "heading": "Essential shortcuts",
+          "blocks": [
+            {
+              "p": "These sixteen cover most of a first edit. Learn J, K, L and the trimming keys first; they save the most time."
+            },
+            {
+              "table": {
+                "head": [
+                  "Action",
+                  "Shortcut"
+                ],
+                "rows": [
+                  [
+                    "Play / pause",
+                    "Space"
+                  ],
+                  [
+                    "Play backward / stop / play forward (tap again to speed up)",
+                    "J / K / L"
+                  ],
+                  [
+                    "Mark In / Mark Out",
+                    "I / O"
+                  ],
+                  [
+                    "Insert clip at playhead",
+                    ", (comma)"
+                  ],
+                  [
+                    "Selection tool",
+                    "V"
+                  ],
+                  [
+                    "Razor tool",
+                    "C"
+                  ],
+                  [
+                    "Type tool",
+                    "T"
+                  ],
+                  [
+                    "Cut at playhead",
+                    "Cmd+K"
+                  ],
+                  [
+                    "Ripple delete",
+                    "Option+Delete"
+                  ],
+                  [
+                    "Trim start / end of clip to playhead",
+                    "Q / W"
+                  ],
+                  [
+                    "Zoom timeline in / out",
+                    "= / -"
+                  ],
+                  [
+                    "Fit whole timeline in view",
+                    "\\"
+                  ],
+                  [
+                    "Add default transition",
+                    "Cmd+D"
+                  ],
+                  [
+                    "Undo",
+                    "Cmd+Z"
+                  ],
+                  [
+                    "Save",
+                    "Cmd+S"
+                  ],
+                  [
+                    "Export",
+                    "Cmd+M"
+                  ]
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "heading": "Good habits and what to learn next",
+          "blocks": [
+            {
+              "p": "Most beginner trouble comes from four things, and each has a simple fix."
+            },
+            {
+              "list": [
+                {
+                  "title": "“Media Offline” in red.",
+                  "text": "You moved or renamed a file after importing. Right-click the clip > Link Media and point Premiere to the new location. Avoid it by not moving files once a project has started."
+                },
+                {
+                  "title": "Lost work.",
+                  "text": "Press Cmd+S often. Auto-save is on by default, and backups sit in the Adobe Premiere Auto-Save folder next to your project file."
+                },
+                {
+                  "title": "Choppy playback.",
+                  "text": "Lower the playback resolution in the Program Monitor from Full to 1/2 or 1/4. This changes the preview only, not the export."
+                },
+                {
+                  "title": "Polishing too early.",
+                  "text": "Finish the rough order of the whole video before you touch color, titles or effects."
+                }
+              ]
+            },
+            {
+              "p": "Once a full edit feels comfortable, the next skills worth adding are keyframes (animating position, scale or volume over time), multi-camera editing for interviews, and the newer AI tools such as Object Mask and Generative Extend. Adobe lists what each release added on its [what’s new page](https://helpx.adobe.com/premiere-pro/using/whats-new.html)."
+            }
+          ]
+        },
+        {
+          "heading": "Sources",
+          "blocks": [
+            {
+              "list": [
+                {
+                  "title": "",
+                  "text": "[Adobe Premiere desktop release notes](https://helpx.adobe.com/premiere/desktop/whats-new/release-notes.html): current version and system requirements"
+                },
+                {
+                  "title": "",
+                  "text": "[PetaPixel, 20 January 2026](https://petapixel.com/2026/01/20/rebranded-adobe-premiere-26-arrives-with-one-click-object-tracking): the rename to Adobe Premiere and Object Mask"
+                },
+                {
+                  "title": "",
+                  "text": "[Adobe: import media into a new project](https://helpx.adobe.com/premiere-pro-next/organize-media/import-files/import-media-into-a-new-project.html): Import mode and the Create new sequence switch"
+                }
+              ]
+            },
+            {
+              "p": "The editing steps and shortcuts are standard Premiere defaults, written from general knowledge of the app rather than taken from these pages."
+            }
+          ]
+        }
+      ],
+      "submit": "Export your Short as one .mp4 file named MyMorning_YourName and drop it in the Week 8 Drive folder.",
+      "submitLink": "https://drive.google.com/drive/folders/1DNiMXkCvhHSnok7IKS02oMi1hj9p-E9e?usp=sharing",
+      "submitLinkText": "Week 8 Drive folder"
+    },
+    {
       "id": "final-project",
       "week": 9,
       "title": "Final Project: Celebrating Life",
