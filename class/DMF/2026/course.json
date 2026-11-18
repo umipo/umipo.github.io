@@ -260,7 +260,7 @@
     },
     {
       "id": "final-project",
-      "week": 8,
+      "week": 9,
       "title": "Final Project: Celebrating Life",
       "linkText": "Final project brief: Celebrating Life",
       "intro": "In a team of three to five, create a brand that brings awareness to the theme of life. Teams present on Wednesday 16 December (Week 12).",
@@ -274,32 +274,6 @@
           "text": "In a team of three to five, you will create a brand that brings awareness to the theme of life. It can be the life of a person, life in a digital space, biological life, artificial life, a virtual or imagined life, a plant, or anything you think deepens our understanding of what it means to be alive.",
           "items": [
             "Next week, with your team, you start brainstorming ideas around life and begin your story design."
-          ]
-        },
-        {
-          "heading": "Which life",
-          "text": "Choose the life your brand is about. For example:",
-          "steps": [
-            {
-              "title": "The life of a person",
-              "text": "One human, real or composite, and what their days are made of."
-            },
-            {
-              "title": "Life in a digital space",
-              "text": "How we live, gather, remember and leave online."
-            },
-            {
-              "title": "Biological life",
-              "text": "A plant, an animal, a body, an ecosystem."
-            },
-            {
-              "title": "Artificial life",
-              "text": "Machines, models, agents, and the question of what it means for them to be “alive”."
-            },
-            {
-              "title": "Virtual or imagined life",
-              "text": "A character, a world, a life that exists only because someone made it."
-            }
           ]
         },
         {
@@ -347,15 +321,6 @@
               "title": "A team sheet",
               "text": "Who is producer, director, editor, community manager, designer (or other roles you define), and what each person made."
             }
-          ]
-        },
-        {
-          "heading": "Constraints",
-          "items": [
-            "One category per team, chosen at the end of brainstorm week.",
-            "The audience must be reachable. Name the person this brand is for. Talk to at least three of them before you write the production plan.",
-            "The film uses what you learned: shot sizes, angles, light, locked focus, coverage, clean sound, J- and L-cuts.",
-            "Two teams: Team Bhutan and Team SDS."
           ]
         }
       ],
