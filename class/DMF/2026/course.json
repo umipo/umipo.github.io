@@ -304,27 +304,27 @@
         },
         {
           "heading": "Choose one category",
-          "text": "Each category forces a different kind of thinking. Pick the one whose constraint you want to work under.",
+          "text": "Each category is a different way in. These are only sparks. Go somewhere we haven't thought of.",
           "steps": [
             {
               "title": "Influencer",
-              "text": "A person whose daily life is the content — a farmer in Punakha, a night-shift nurse, a monk who posts once a day. Humans of New York began as one person's account."
+              "text": "It could be an individual. A life that people follow. A person, an animal, a tree, a city, a future version of you."
             },
             {
               "title": "Product brand",
-              "text": "A thing people can buy that carries the idea — a journal, a seed kit, a lamp that follows the sun, an app that posts for a plant. Patagonia and Aesop sell objects but talk about how to live."
+              "text": "Something people can hold, use or buy that carries the idea. An object, a tool, an app, a ritual in a box, software."
             },
             {
               "title": "Movement",
-              "text": "An invitation to do something differently — a week without a feed, a street where neighbours learn each other's names, letters to your twenty-year-old self."
+              "text": "An invitation to live differently, even for one day. Quiet or loud, tiny or global."
             },
             {
               "title": "Community",
-              "text": "A place people join and fill with their own lives — a shared account of mornings from different countries, an archive of the sounds of rooms, a group that documents the last shops on their streets."
+              "text": "A place people fill with their own lives. Online, offline, or both."
             },
             {
               "title": "Education institute",
-              "text": "A course or channel that teaches something about life — how a language model “remembers”, how a village feeds a city, what happens to your data when you die. Kurzgesagt is one on a large scale."
+              "text": "Something that teaches or guides us towards the message you want to share about life."
             }
           ]
         },
